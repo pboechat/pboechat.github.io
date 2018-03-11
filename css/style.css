@@ -1,0 +1,264 @@
+/* ************************
+   *     HTML ELEMENTS
+   ************************/
+
+.standardPage
+{
+	font-family: Tahoma, sans-serif;
+	color: #c2c2c2;
+	width:100%;
+	height:100%;
+	background: #000000;
+	background: -moz-linear-gradient(-45deg,  #000000 0%, #45484d 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#000000), color-stop(100%,#45484d));
+	background: -webkit-linear-gradient(-45deg,  #000000 0%,#45484d 100%);
+	background: -o-linear-gradient(-45deg,  #000000 0%,#45484d 100%);
+	background: -ms-linear-gradient(-45deg,  #000000 0%,#45484d 100%);
+	background: linear-gradient(135deg,  #000000 0%,#45484d 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#45484d',GradientType=1 );
+}
+
+.errorPage
+{
+	font-family: Tahoma, sans-serif;
+	color: #c2c2c2;
+	width:100%;
+	height:100%;
+	background: #000000;
+}
+
+a:link, a:visited
+{
+	color: #c2c2c2;
+}
+
+a:hover
+{
+	color: #e0e0e0;
+}
+
+/* *******************************
+   *     STRUCTURAL ELEMENTS
+   *******************************/
+
+.errorMessage
+{
+	color: #ff0000;
+	display:block;
+	position:absolute;
+	top: 40%;
+	left: 40%;
+	line-height: 1em;
+	font-weight:bold;
+	font-size: 60px;
+	text-shadow: 0px 0px 0 rgb(170,0,0),1px 1px 0 rgb(146,0,0),2px 2px 0 rgb(121,0,0),3px 3px 0 rgb(97,0,0),4px 4px 0 rgb(73,0,0), 5px 5px 0 rgb(49,0,0),6px 6px 5px rgba(0,0,0,0.75),6px 6px 1px rgba(0,0,0,0.5),0px 0px 5px rgba(0,0,0,.2);
+}
+   
+.navigationBar
+{
+	position:absolute;
+	top: 22px;
+	left: 22px;
+	line-height: 1em;
+	font-weight:bold;
+	font-size: 22px;
+	text-shadow: 0px 0px 0 rgb(170,170,170),1px 1px 0 rgb(146,146,146),2px 2px 0 rgb(121,121,121),3px 3px 0 rgb(97,97,97),4px 4px 0 rgb(73,73,73), 5px 5px 0 rgb(49,49,49),6px 6px 5px rgba(0,0,0,0.75),6px 6px 1px rgba(0,0,0,0.5),0px 0px 5px rgba(0,0,0,.2);
+}
+
+.navigationBar a:link, a:visited
+{
+	color: #c2c2c2;
+	text-decoration: none;
+}
+
+.navigationBar a:hover
+{
+	color: #e0e0e0;
+}
+
+.navigationHint
+{
+	display:block;
+	position:absolute;
+	top: 5%;
+	left: 85%;
+	width: 200px;
+	height: 50px;
+	font-size: 10px;
+	text-align: center;
+	opacity: 0;
+	filter: alpha(opacity=0); /* For IE8 and earlier */
+}
+
+.about
+{
+	display:block;
+	position:absolute;
+	top: 20%;
+	left: 33%;
+	line-height: 1.5em;
+	font-weight:bold;
+	font-size: 22px;
+	text-shadow: 0px 0px 0 rgb(170,170,170),1px 1px 0 rgb(146,146,146),2px 2px 0 rgb(121,121,121),3px 3px 0 rgb(97,97,97),4px 4px 0 rgb(73,73,73), 5px 5px 0 rgb(49,49,49),6px 6px 5px rgba(0,0,0,0.75),6px 6px 1px rgba(0,0,0,0.5),0px 0px 5px rgba(0,0,0,.2);
+}
+
+.menu
+{
+	display:block;
+	position:absolute;
+	top: 20%;
+	left: 33%;
+	height: 75%;
+	line-height: 1em;
+	font-weight:bold;
+	font-size: 60px;
+	text-shadow: 0px 0px 0 rgb(170,170,170),1px 1px 0 rgb(146,146,146),2px 2px 0 rgb(121,121,121),3px 3px 0 rgb(97,97,97),4px 4px 0 rgb(73,73,73), 5px 5px 0 rgb(49,49,49),6px 6px 5px rgba(0,0,0,0.75),6px 6px 1px rgba(0,0,0,0.5),0px 0px 5px rgba(0,0,0,.2);
+	opacity: 0;
+	filter: alpha(opacity=0); /* For IE8 and earlier */
+}
+
+.menu a:link, a:visited
+{
+	color: #c2c2c2;
+	text-decoration: none;
+}
+
+.menu a:hover
+{
+	color: #e0e0e0;
+}
+
+.footer
+{
+	display:block;
+	position:absolute;
+	top: 95%;
+	left: 80%;
+	width: 20%;
+	height: 5%;
+	text-align: center;	
+}
+
+/* **********************
+   *     ACCORDION
+   **********************/
+
+.accordion
+{
+	display:block;
+	position:absolute;
+	top: 20%;
+	left: 33%;
+	height: 75%;
+	line-height: 1.5em;
+	opacity: 0;
+	filter: alpha(opacity=0); /* For IE8 and earlier */
+}
+
+.ui-state-focus 
+{ 
+	outline: none; 
+}
+
+.ui-accordion-header 
+{
+	outline: none;
+	font-weight:bold;
+	font-size: 60px;
+	text-shadow: 0px 0px 0 rgb(170,170,170),1px 1px 0 rgb(146,146,146),2px 2px 0 rgb(121,121,121),3px 3px 0 rgb(97,97,97),4px 4px 0 rgb(73,73,73), 5px 5px 0 rgb(49,49,49),6px 6px 5px rgba(0,0,0,0.75),6px 6px 1px rgba(0,0,0,0.5),0px 0px 5px rgba(0,0,0,.2);
+    cursor: pointer;
+	cursor: hand;
+}
+
+.ui-accordion-content
+{
+	display:block;
+	width: 420px;
+	border: 2px solid #9B9B9B;
+	padding: 22px;
+	background: -moz-linear-gradient(45deg, rgba(124,124,124,0.5) 0%, rgba(124,124,124,0.5) 1%, rgba(0,0,0,0) 100%);
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(124,124,124,0.5)), color-stop(1%,rgba(124,124,124,0.5)), color-stop(100%, rgba(0,0,0,0)));
+	background: -webkit-linear-gradient(45deg, rgba(124,124,124,0.5) 0%,rgba(124,124,124,0.5) 1%, rgba(0,0,0,0) 100%);
+	background: -o-linear-gradient(45deg, rgba(124,124,124,0.5) 0%, rgba(124,124,124,0.5) 1%, rgba(0,0,0,0) 100%);
+	background: -ms-linear-gradient(45deg, rgba(124,124,124,0.5) 0%, rgba(124,124,124,0.5) 1%, rgba(0,0,0,0) 100%);
+	background: linear-gradient(45deg, rgba(124,124,124,0.5) 0%, rgba(124,124,124,0.5) 1%, rgba(0,0,0,0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#807c7c7c', endColorstr='#00000000',GradientType=1);
+}
+
+/* ********************
+   *     NIVO ZOOM
+   ********************/
+
+a.nivoZoom 
+{
+	border: 0 !important;
+}
+
+a.nivoZoom img 
+{
+	-moz-box-shadow: 0px 0px 5px #000;
+	-webkit-box-shadow: 0px 0px 5px #000;
+	box-shadow: 0px 0px 5px #000;
+}
+a.nivoZoom img .nivoLarge 
+{
+	-moz-box-shadow: 0px 0px 10px #000;
+	-webkit-box-shadow: 0px 0px 10px #000;
+	box-shadow: 0px 0px 10px #000;
+}
+
+.nivoCaption 
+{
+	display: none;
+	position: absolute;
+	z-index: 110;
+	text-align: center;
+	background: #010101;
+	color: #ffffff;
+	padding: 4px 0;
+	overflow: hidden;
+}
+
+.nivoZoomHover 
+{
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:9;
+	width:100%;
+	height:100%;
+	cursor:pointer;
+	background: url("../images/Zoom.png") no-repeat 50% 50%;
+}
+
+.nivoZoomHover .loading 
+{
+	background: url("../images/Loading.gif") no-repeat 50% 50%;
+	border: 4px solid #000;
+	width: 16px;
+	height: 16px;
+	top: 43%;
+	left: 43%;
+	opacity: 0.8;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+
+/* source: https://stackoverflow.com/questions/248011/how-do-i-wrap-text-in-a-pre-tag */
+pre 
+{
+    background-color: white;
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+/* source: https://github.com/google/code-prettify#how-can-i-put-line-numbers-on-every-line-instead-of-just-every-fifth-line */
+li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8 
+{
+  list-style-type: decimal !important;
+}
+

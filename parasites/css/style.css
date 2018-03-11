@@ -1,0 +1,51 @@
+/* ************************
+   *     HTML ELEMENTS
+   ************************/
+
+body
+{
+	font-family: Tahoma, sans-serif;
+	color: #c2c2c2;
+	width:100%;
+	height:100%;
+	background: #000000;
+}
+
+a:link, a:visited
+{
+	color: #c2c2c2;
+}
+
+a:hover
+{
+	color: #e0e0e0;
+}
+
+/* *******************************
+   *     STRUCTURAL ELEMENTS
+   *******************************/
+
+.applet
+{
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 1em;
+	font-weight:bold;
+	font-size: 22px;
+	text-shadow: 0px 0px 0 rgb(170,170,170),1px 1px 0 rgb(146,146,146),2px 2px 0 rgb(121,121,121),3px 3px 0 rgb(97,97,97),4px 4px 0 rgb(73,73,73), 5px 5px 0 rgb(49,49,49),6px 6px 5px rgba(0,0,0,0.75),6px 6px 1px rgba(0,0,0,0.5),0px 0px 5px rgba(0,0,0,.2);
+}
+
+.applet a:link, a:visited
+{
+	color: #c2c2c2;
+	text-decoration: none;
+}
+
+.applet a:hover
+{
+	color: #e0e0e0;
+}
