@@ -673,3 +673,44 @@ $(function () {
 		}
 	});
 });
+
+/* (1) THEME TOGGLE SCRIPT ============================== */
+(function () {
+	const root = document.documentElement;
+	const KEY = 'theme'; // 'light' | 'dark'
+
+	// Apply stored preference or fall back to system
+	const stored = localStorage.getItem(KEY);
+	if (stored === 'light' || stored === 'dark') {
+		root.dataset.theme = stored;
+	} else {
+		root.dataset.theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+	}
+
+	// Keep in sync with system (unless user picked a theme)
+	const mq = window.matchMedia('(prefers-color-scheme: dark)');
+	mq.addEventListener('change', (e) => {
+		if (!localStorage.getItem(KEY)) {
+			root.dataset.theme = e.matches ? 'dark' : 'light';
+			updateButton();
+		}
+	});
+
+	// Toggle button
+	const btn = document.getElementById('themeToggle');
+	function updateButton() {
+		const isDark = root.dataset.theme === 'dark';
+		btn.setAttribute('aria-pressed', String(isDark));
+		btn.textContent = isDark ? '☀️' : '🌙';
+		btn.title = isDark ? 'Switch to light theme' : 'Switch to dark theme';
+	}
+	if (btn) {
+		updateButton();
+		btn.addEventListener('click', () => {
+			root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+			localStorage.setItem(KEY, root.dataset.theme);
+			updateButton();
+		});
+	}
+})();
+/* ==================================================== */

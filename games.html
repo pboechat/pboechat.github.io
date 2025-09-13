@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,6 +15,7 @@
 	<script type="text/javascript" src="js/site.js"></script>
 	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </head>
+
 <body class="standardPage">
 	<header class="navigationBar" role="banner">
 		<nav class="quickNav" aria-label="Quick navigation">
@@ -26,185 +28,233 @@
 	</header>
 	<main>
 		<div class="navigationHint" aria-live="polite">
-			<p><img src="images/ArrowsNavigationHint.png" alt="Arrows navigation hint"/></p>
+			<p><img src="images/ArrowsNavigationHint.png" alt="Arrows navigation hint" /></p>
 			<p>Use arrows keys to navigate through items...</p>
 		</div>
 		<div class="navigationHint" aria-live="polite">
-			<p><img src="images/WASDKeysNavigationHint.png" alt="WASD keys hint"/></p>
+			<p><img src="images/WASDKeysNavigationHint.png" alt="WASD keys hint" /></p>
 			<p>...WASD keys will work too.</p>
 		</div>
 		<div class="navigationHint" aria-live="polite">
-			<p><img src="images/ReturnNavigationHint.png" alt="Return key hint"/></p>
+			<p><img src="images/ReturnNavigationHint.png" alt="Return key hint" /></p>
 			<p>Use RETURN to open/close current selected item.</p>
 		</div>
 		<div class="navigationHint" aria-live="polite">
-			<p><img src="images/EscapeNavigationHint.png" alt="Escape key hint"/></p>
+			<p><img src="images/EscapeNavigationHint.png" alt="Escape key hint" /></p>
 			<p>Use escape to close current item or return home (if no item is selected).</p>
 		</div>
 		<div class="accordion">
-	<!-- PROCEDURAL CITY -->
-	<h3>Procedural City [Demo]</h3>
-	<div>
-		<p>
-			<a href="images/ProceduralCity.png" class="nivoZoom">
-				<img src="images/ProceduralCity-mini.png" />
-			</a>
-		</p>
-		<p><b>Procedural City</b> is a demo that uses a few tricks to build random nice-looking 3D cities.</p>
-		<p>First, neighborhood blocks are randomly placed in an irregular rectangle grid. <br/>
-		<p>
-			<a href="images/ProceduralCity-IrregularGrid.png" class="nivoZoom">
-				<img src="images/ProceduralCity-IrregularGrid-mini.png" />
-			</a>
-		</p>
-		<p>Then, building allotments are packed inside blocks using this <a href="https://github.com/juj/RectangleBinPack/" target="_blank">bin packing</a> algorithm. <br/>
-		Bin packing uses an heuristic that tries to maximize edge contact for "bins". This leads to better fitting of allotments along block edges. <br/>
-		Once blocks are filled, non-edge allotments are discarded.<br/>
-		<p>
-            <a href="images/BinPacking.gif" class="nivoZoom">
-                <img width="400" src="images/BinPacking-mini.gif"/>
-            </a>
-		</p>
-		Buildings are extruded from allotments and their façades decorated by two pattern matrices. <br/>
-		Matrices are picked from one of six achitectural styles (art deco, art noveau, brownstone, chicago old school, international and modernist). <br/>
-		One pattern matrix implements simple block extrusion/exclusion to be performed in the façade geometry. <br/>
-		Another determines which element (ie.: window, door, column) should be appended where in the façade. <br/>
-		Details (ie: headers, rails, firestairs) are randomly selected according to the defined achitectural style. <br/>
-		Finally, some common props (ie: chimney, water tank) are scattered around the rooftops. <br/>
-		<p>
-            <a href="images/ProceduralCity-BuildingGeneration.gif" class="nivoZoom">
-                <img src="images/ProceduralCity-BuildingGeneration-mini.gif"/>
-            </a>
-		</p>
-		<p>Built with <a href="http://unity3d.com" target="_blank">Unity</a> personal edition.</p>
-		<p>Visit the <a href="https://github.com/pboechat/ProceduralCity" target="_blank">project website</a>, <br/>
-		or download a windows build of the demo <a href="downloads/ProceduralCity.zip" target="_blank">here</a>.</p>
-	</div>
-	<!-- PROCEDURAL CITY -->
-	<!-- BULLETS ARE FATAL -->
-	<h3>Bullets Are Fatal</h3>
-	<div>
-		<p>
-			<a href="images/BulletsAreFatalCover.png" class="nivoZoom">
-				<img src="images/BulletsAreFatalCover-mini.png" />
-			</a>
-		</p>
-		<p><b>Bullets Are Fatal</b> is a fast-paced 2.5D platform/shooter set in a fictional old west.</p>
-		<p>Shoot bandits, dodge bullets and run through procedurally generated levels to get your character to the saloon.</p>
-		<p><iframe width="400" height="240" src="//www.youtube.com/embed/2_lJ_MrwZqs" frameborder="0" allowfullscreen></iframe></p>
-		<p>Bullets Are Fatal was developed in 72 hours for the <a href="http://www.ludumdare.com/compo/" target="_blank">Ludum Dare</a> competition and got the 12th place in the graphics category (4.57/5).</p>
-		<p>It was built with C# and <a href="http://unity3d.com" target="_blank">Unity</a> personal edition.</p>
-		<p>Visit the LD #28 <a href="http://www.ludumdare.com/compo/ludum-dare-28/?action=preview&uid=30821" target="_blank">submission page</a> <br/>
-		or download a windows build of the game <a href="downloads/BulletsAreFatal.zip" target="_blank">here</a> (compo version)</p>
-	</div>
-	<!-- BULLETS ARE FATAL -->
-	<!-- OFFICETOPIA -->
-	<h3>OfficeTopia</h3>
-	<div>
-		<p>
-			<a href="images/OfficeTopiaCover.png" class="nivoZoom">
-				<img src="images/OfficeTopiaCover-mini.png" />
-			</a>
-		</p>
-		<p>
-            <b>OfficeTopia</b> is a tycoon game in which you play as an entrepreneur that has to keep his business running for at least 2 years.
-        </p>
-		<p>
-            Choose the name and the specialization area of your company. Hire the best employees and bid for the most profitable contracts. In OfficeTopia you can fulfill your dream to run a small company with zero risk!
-        </p>
-        <p>
-            <iframe width="400" height="240" src="https://www.youtube.com/embed/CCK4th71rG4" frameborder="0" allowfullscreen></iframe>
-        </p>
-		<p>
-            This game was awarded the 4th place in the <a href="https://concursodesenvolvimentodejogos.sebrae.com.br/" target="_blank">1st Sebrae Game Development Contest</a>, a serious game nationwide contest (<a href="http://oglobo.globo.com/economia/emprego/empreendedorismo-ao-alcance-dos-jovens-de-todo-pais-9459404" target="_blank">newspaper article</a>).
-        </p>
-		<p>
-            It was built with C# and <a href="http://unity3d.com" target="_blank">Unity</a> personal edition.
-        </p>
-		<p>
-            Subscribe to <a href="http://desafiouniversitarioempreendedor.sebrae.com.br/plataforma/index.xhtml" target="_blank">Sebrae learning platform</a> and <a href="http://desafiouniversitarioempreendedor.sebrae.com.br/plataforma/aluno-detalhe-jogo.xhtml?cid=3" target="_blank">play the web version</a> (Portuguese only).
-        </p>
-	</div>
-	<!-- OFFICETOPIA -->
-	<!-- WIRE3D -->
-	<h3>Wire3D</h3>
-	<div>
-        <p>
-            <img src="images/wire3d-logo.png" align="left"/>
-        </p>
-		<p>
-            <b>Wire3d</b> is a multiplatform game engine created by antibyte. Written in C++, fully open source and licensed as LGPL.
-        </p>
-		<p>
-            <iframe width="400" height="240" src="http://www.youtube.com/embed/ec_3FjXzKoo?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
-        </p>
-		<p>
-            In early 2012, I started contributing to the project, developing the code for reading controllers, improving <a href="http://bulletphysics.org">bullet physics</a> integration, etc. At the sime time we started a 3rd person shooter demo.
-        </p>
-		<p>
-			<a href="images/Wire3dDemoGame.png" class="nivoZoom">
-				<img src="images/Wire3dDemoGame-mini.png" />
-			</a>
-		<p>
-            At the end of the year, we decided to do some unit testing and so we started using <a href="http://code.google.com/p/googletest/">googletest</a> and 
-            <a href="http://code.google.com/p/googlemock/">google mock</a>, testing and mocking platform specific code and running them on their own platforms (real or emulated).
-        </p>
-		</p>
-		<p>Visit <a href="https://github.com/rrath/Wire3D" target="_blank">project website</a></p>
-	</div>
-	<!-- WIRE3D -->
-	<!-- CUBESCAPE -->
-	<h3>Cubescape</h3>
-	<div>
-        <p>
-			<a href="images/CubescapeCoverArt.png" class="nivoZoom">
-				<img src="images/CubescapeCoverArt-mini.png" />
-			</a>
-		</p>
-		<p>
-            <b>Cubescape</b> is an action-platformer with some puzzle ingredients. It stopped being developed in 2013. This unfinished version features 3 levels and 1 boss stage. 
-            It was built with C# and <a href="http://unity3d.com/" target="_blank">Unity</a> personal edition.
-        </p>
-        <p>
-            <iframe width="400" height="240" src="https://www.youtube.com/embed/OhmoObc1QPY" frameborder="0" allowfullscreen></iframe>
-        </p>
-		<p>
-            While playing Cubescape, you impersonate Lucia, a bright-skinned robot girl that has an elastic band as hair. The game starts as Lucia wakes up imprisioned in a weird place made out of cubes. She then learns she can move some of those cubes with her telekinetic powers and break free from her prision.
-        </p>
-		<p>
-            Cubescape requires a combination of thinking and manual skills, asking the player to disable traps with Lucia's telekinectic powers while jumping and moving through the scenarios.
-        </p>
-		<p>Visit <a href="#" target="_blank">project website</a></p>
-	</div>
-	<!-- CUBESCAPE -->
-	<!-- PARASITES -->
-	<h3>Parasites</h3>
-	<div>
-		<p><img src="images/Parasites-logo.png"/></p>
-		<p><b>Parasites</b> is an action/maze game in which you play with a microorganism that has to eat the internal tissues of a person. Evade white cells and avoid eating antibiotics. Survive as long as possible and achieve the highest score!</p> 
-		<p>
-			<a href="images/Parasites.png" class="nivoZoom">
-				<img src="images/Parasites-mini.png" />
-			</a>
-		</p>
-		<p>Parasites main feature is a <a href="http://roguebasin.roguelikedevelopment.org/index.php?title=Cellular_Automata_Method_for_Generating_Random_Cave-Like_Levels">cellular automata algorithm</a> that generates random cave-like levels.</p>
-		<br>
-		<p>Visit the <a href="#" target="_blank">project website</a></p>
-		<p><a href="parasites/index.html" target="_blank">Play</a> the applet version</p>
-		<p><a href="parasites/bin/Parasites-bin.zip">Download</a> the binaries</p>
-		<p>View the <a href="parasites/docs/Parasites Game Design Document.pdf">Game Design Document</a></p>
-	</div>
-	<!-- PARASITES -->
-	<!-- JAVAPLAY -->
-	<h3>javaPlay</h3>
-	<div>
-		<p><b>javaPlay</b> is a didactic java game engine, started by prof. <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4787855A1" target="_blank">Bruno Feijó</a> as a step-by-step example for this <a href="http://books.google.com.br/books/about/Introdu%C3%A7%C3%A3o_%C3%80_Ci%C3%AAncia_da_Computa%C3%A7%C3%A3o.html?hl=pt-BR&id=27WSgzfQiHsC" target="_blank">book</a>.</p>
-		<p>Extended by me as a final project for the <a href="http://www-di.inf.puc-rio.br/~bfeijo/cursosjogos/acjogos/index.html" target="_blank">computer games and animation</a> course taken during my master's.</p>
-		<p>Visit <a href="https://code.google.com/p/javaplay/" target="_blank">project website</a></p>
-	</div>
-	<!-- JAVAPLAY -->
-	<!-- A16BITRPG -->
-	<!-- <h3>a16bitrpg</h3>
+			<!-- PROCEDURAL CITY -->
+			<h3>Procedural City [Demo]</h3>
+			<div>
+				<p>
+					<a href="images/ProceduralCity.png" class="nivoZoom">
+						<img src="images/ProceduralCity-mini.png" />
+					</a>
+				</p>
+				<p><b>Procedural City</b> is a demo that uses a few tricks to build random nice-looking 3D cities.</p>
+				<p>First, neighborhood blocks are randomly placed in an irregular rectangle grid. <br />
+				<p>
+					<a href="images/ProceduralCity-IrregularGrid.png" class="nivoZoom">
+						<img src="images/ProceduralCity-IrregularGrid-mini.png" />
+					</a>
+				</p>
+				<p>Then, building allotments are packed inside blocks using this <a
+						href="https://github.com/juj/RectangleBinPack/" target="_blank">bin packing</a> algorithm.
+					<br />
+					Bin packing uses an heuristic that tries to maximize edge contact for "bins". This leads to better
+					fitting of allotments along block edges. <br />
+					Once blocks are filled, non-edge allotments are discarded.<br />
+				<p>
+					<a href="images/BinPacking.gif" class="nivoZoom">
+						<img width="400" src="images/BinPacking-mini.gif" />
+					</a>
+				</p>
+				Buildings are extruded from allotments and their façades decorated by two pattern matrices. <br />
+				Matrices are picked from one of six achitectural styles (art deco, art noveau, brownstone, chicago old
+				school, international and modernist). <br />
+				One pattern matrix implements simple block extrusion/exclusion to be performed in the façade geometry.
+				<br />
+				Another determines which element (ie.: window, door, column) should be appended where in the façade.
+				<br />
+				Details (ie: headers, rails, firestairs) are randomly selected according to the defined achitectural
+				style. <br />
+				Finally, some common props (ie: chimney, water tank) are scattered around the rooftops. <br />
+				<p>
+					<a href="images/ProceduralCity-BuildingGeneration.gif" class="nivoZoom">
+						<img src="images/ProceduralCity-BuildingGeneration-mini.gif" />
+					</a>
+				</p>
+				<p>Built with <a href="http://unity3d.com" target="_blank">Unity</a> personal edition.</p>
+				<p>Visit the <a href="https://github.com/pboechat/ProceduralCity" target="_blank">project website</a>,
+					<br />
+					or download a windows build of the demo <a href="downloads/ProceduralCity.zip"
+						target="_blank">here</a>.</p>
+			</div>
+			<!-- PROCEDURAL CITY -->
+			<!-- BULLETS ARE FATAL -->
+			<h3>Bullets Are Fatal</h3>
+			<div>
+				<p>
+					<a href="images/BulletsAreFatalCover.png" class="nivoZoom">
+						<img src="images/BulletsAreFatalCover-mini.png" />
+					</a>
+				</p>
+				<p><b>Bullets Are Fatal</b> is a fast-paced 2.5D platform/shooter set in a fictional old west.</p>
+				<p>Shoot bandits, dodge bullets and run through procedurally generated levels to get your character to
+					the saloon.</p>
+				<p><iframe width="400" height="240" src="//www.youtube.com/embed/2_lJ_MrwZqs" frameborder="0"
+						allowfullscreen></iframe></p>
+				<p>Bullets Are Fatal was developed in 72 hours for the <a href="http://www.ludumdare.com/compo/"
+						target="_blank">Ludum Dare</a> competition and got the 12th place in the graphics category
+					(4.57/5).</p>
+				<p>It was built with C# and <a href="http://unity3d.com" target="_blank">Unity</a> personal edition.</p>
+				<p>Visit the LD #28 <a href="http://www.ludumdare.com/compo/ludum-dare-28/?action=preview&uid=30821"
+						target="_blank">submission page</a> <br />
+					or download a windows build of the game <a href="downloads/BulletsAreFatal.zip"
+						target="_blank">here</a> (compo version)</p>
+			</div>
+			<!-- BULLETS ARE FATAL -->
+			<!-- OFFICETOPIA -->
+			<h3>OfficeTopia</h3>
+			<div>
+				<p>
+					<a href="images/OfficeTopiaCover.png" class="nivoZoom">
+						<img src="images/OfficeTopiaCover-mini.png" />
+					</a>
+				</p>
+				<p>
+					<b>OfficeTopia</b> is a tycoon game in which you play as an entrepreneur that has to keep his
+					business running for at least 2 years.
+				</p>
+				<p>
+					Choose the name and the specialization area of your company. Hire the best employees and bid for the
+					most profitable contracts. In OfficeTopia you can fulfill your dream to run a small company with
+					zero risk!
+				</p>
+				<p>
+					<iframe width="400" height="240" src="https://www.youtube.com/embed/CCK4th71rG4" frameborder="0"
+						allowfullscreen></iframe>
+				</p>
+				<p>
+					This game was awarded the 4th place in the <a
+						href="https://concursodesenvolvimentodejogos.sebrae.com.br/" target="_blank">1st Sebrae Game
+						Development Contest</a>, a serious game nationwide contest (<a
+						href="http://oglobo.globo.com/economia/emprego/empreendedorismo-ao-alcance-dos-jovens-de-todo-pais-9459404"
+						target="_blank">newspaper article</a>).
+				</p>
+				<p>
+					It was built with C# and <a href="http://unity3d.com" target="_blank">Unity</a> personal edition.
+				</p>
+				<p>
+					Subscribe to <a href="http://desafiouniversitarioempreendedor.sebrae.com.br/plataforma/index.xhtml"
+						target="_blank">Sebrae learning platform</a> and <a
+						href="http://desafiouniversitarioempreendedor.sebrae.com.br/plataforma/aluno-detalhe-jogo.xhtml?cid=3"
+						target="_blank">play the web version</a> (Portuguese only).
+				</p>
+			</div>
+			<!-- OFFICETOPIA -->
+			<!-- WIRE3D -->
+			<h3>Wire3D</h3>
+			<div>
+				<p>
+					<img src="images/wire3d-logo.png" align="left" />
+				</p>
+				<p>
+					<b>Wire3d</b> is a multiplatform game engine created by antibyte. Written in C++, fully open source
+					and licensed as LGPL.
+				</p>
+				<p>
+					<iframe width="400" height="240"
+						src="http://www.youtube.com/embed/ec_3FjXzKoo?feature=player_detailpage" frameborder="0"
+						allowfullscreen></iframe>
+				</p>
+				<p>
+					In early 2012, I started contributing to the project, developing the code for reading controllers,
+					improving <a href="http://bulletphysics.org">bullet physics</a> integration, etc. At the sime time
+					we started a 3rd person shooter demo.
+				</p>
+				<p>
+					<a href="images/Wire3dDemoGame.png" class="nivoZoom">
+						<img src="images/Wire3dDemoGame-mini.png" />
+					</a>
+				<p>
+					At the end of the year, we decided to do some unit testing and so we started using <a
+						href="http://code.google.com/p/googletest/">googletest</a> and
+					<a href="http://code.google.com/p/googlemock/">google mock</a>, testing and mocking platform
+					specific code and running them on their own platforms (real or emulated).
+				</p>
+				</p>
+				<p>Visit <a href="https://github.com/rrath/Wire3D" target="_blank">project website</a></p>
+			</div>
+			<!-- WIRE3D -->
+			<!-- CUBESCAPE -->
+			<h3>Cubescape</h3>
+			<div>
+				<p>
+					<a href="images/CubescapeCoverArt.png" class="nivoZoom">
+						<img src="images/CubescapeCoverArt-mini.png" />
+					</a>
+				</p>
+				<p>
+					<b>Cubescape</b> is an action-platformer with some puzzle ingredients. It stopped being developed in
+					2013. This unfinished version features 3 levels and 1 boss stage.
+					It was built with C# and <a href="http://unity3d.com/" target="_blank">Unity</a> personal edition.
+				</p>
+				<p>
+					<iframe width="400" height="240" src="https://www.youtube.com/embed/OhmoObc1QPY" frameborder="0"
+						allowfullscreen></iframe>
+				</p>
+				<p>
+					While playing Cubescape, you impersonate Lucia, a bright-skinned robot girl that has an elastic band
+					as hair. The game starts as Lucia wakes up imprisioned in a weird place made out of cubes. She then
+					learns she can move some of those cubes with her telekinetic powers and break free from her prision.
+				</p>
+				<p>
+					Cubescape requires a combination of thinking and manual skills, asking the player to disable traps
+					with Lucia's telekinectic powers while jumping and moving through the scenarios.
+				</p>
+				<p>Visit <a href="#" target="_blank">project website</a></p>
+			</div>
+			<!-- CUBESCAPE -->
+			<!-- PARASITES -->
+			<h3>Parasites</h3>
+			<div>
+				<p><img src="images/Parasites-logo.png" /></p>
+				<p><b>Parasites</b> is an action/maze game in which you play with a microorganism that has to eat the
+					internal tissues of a person. Evade white cells and avoid eating antibiotics. Survive as long as
+					possible and achieve the highest score!</p>
+				<p>
+					<a href="images/Parasites.png" class="nivoZoom">
+						<img src="images/Parasites-mini.png" />
+					</a>
+				</p>
+				<p>Parasites main feature is a <a
+						href="http://roguebasin.roguelikedevelopment.org/index.php?title=Cellular_Automata_Method_for_Generating_Random_Cave-Like_Levels">cellular
+						automata algorithm</a> that generates random cave-like levels.</p>
+				<br>
+				<p>Visit the <a href="#" target="_blank">project website</a></p>
+				<p><a href="parasites/index.html" target="_blank">Play</a> the applet version</p>
+				<p><a href="parasites/bin/Parasites-bin.zip">Download</a> the binaries</p>
+				<p>View the <a href="parasites/docs/Parasites Game Design Document.pdf">Game Design Document</a></p>
+			</div>
+			<!-- PARASITES -->
+			<!-- JAVAPLAY -->
+			<h3>javaPlay</h3>
+			<div>
+				<p><b>javaPlay</b> is a didactic java game engine, started by prof. <a
+						href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4787855A1"
+						target="_blank">Bruno Feijó</a> as a step-by-step example for this <a
+						href="http://books.google.com.br/books/about/Introdu%C3%A7%C3%A3o_%C3%80_Ci%C3%AAncia_da_Computa%C3%A7%C3%A3o.html?hl=pt-BR&id=27WSgzfQiHsC"
+						target="_blank">book</a>.</p>
+				<p>Extended by me as a final project for the <a
+						href="http://www-di.inf.puc-rio.br/~bfeijo/cursosjogos/acjogos/index.html"
+						target="_blank">computer games and animation</a> course taken during my master's.</p>
+				<p>Visit <a href="https://code.google.com/p/javaplay/" target="_blank">project website</a></p>
+			</div>
+			<!-- JAVAPLAY -->
+			<!-- A16BITRPG -->
+			<!-- <h3>a16bitrpg</h3>
 	<div>
 		<p>This project was developed as a proof of concept for a game that allows you to extend itself during gameplay.</p>
 		<p>Conceived to be a Java applet, uses a very old release of <a href="http://www.13thmonkey.org/~boris/jgame/" target="_blank">JGame</a>.</p>
@@ -218,9 +268,10 @@
 		</p>
 		<p>Visit <a href="https://www.assembla.com/code/a16bitrpg/subversion/nodes" target="_blank">project website</a></p>
 	</div> -->
-	<!-- A16BITRPG -->
+			<!-- A16BITRPG -->
 		</div>
 	</main>
 	<footer class="footer" role="contentinfo"></footer>
 </body>
+
 </html>

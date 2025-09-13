@@ -472,13 +472,78 @@ li.L8 {
 	 *     MODERN ENHANCEMENTS
 	 *************************/
 
+/* Theme tokens */
+:root[data-theme="light"],
 :root {
-	--bg: #0a0c10;
-	--panel: #12161c;
-	--fg: #cfd8dc;
-	--muted: #9aa7ad;
-	--accent: #66b3ff;
-	/* soft blue for focus outlines */
+	--bg: #ffffff;
+	--fg: #0b0f18;
+	--muted: #4b5563;
+	--accent: #0969da;
+	--surface: #f6f8fa;
+	--border: #d0d7de;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #0d1117;
+		--fg: #c9d1d9;
+		--muted: #8b949e;
+		--accent: #58a6ff;
+		--surface: #161b22;
+		--border: #30363d;
+	}
+}
+
+/* Explicit override (user toggle) */
+:root[data-theme="dark"] {
+	--bg: #0d1117;
+	--fg: #c9d1d9;
+	--muted: #8b949e;
+	--accent: #58a6ff;
+	--surface: #161b22;
+	--border: #30363d;
+}
+
+/* Let the browser style form controls appropriately */
+html {
+	color-scheme: light dark;
+}
+
+body {
+	background: var(--bg);
+	color: var(--fg);
+}
+
+/* Common elements using tokens (safe overrides) */
+a {
+	color: var(--accent);
+}
+
+hr,
+.border {
+	border-color: var(--border);
+}
+
+.navigationBar,
+.accordion h3 {
+	color: var(--fg);
+}
+
+/* Optional: protect icons/images you don’t want re-tinted by your own CSS */
+.no-filter {
+	filter: none !important;
+	mix-blend-mode: normal;
+}
+
+/* Simple styling for a theme toggle button */
+.themeToggle {
+	background: transparent;
+	color: var(--fg);
+	border: 1px solid var(--border);
+	border-radius: 6px;
+	padding: 0.25rem 0.5rem;
+	cursor: pointer;
+	margin-left: 0.5rem;
 }
 
 /* CRT scanlines + subtle glow */
