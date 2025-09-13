@@ -1,7 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-	<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">	
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="cache-control" content="max-age=0" />
 	<meta http-equiv="cache-control" content="no-cache" />
 	<title>Pedro Boechat - games, computer graphics and other stuffs</title>
@@ -11,56 +13,73 @@
 	<script type="text/javascript" src="js/jquery.corner.js"></script>
 	<script type="text/javascript" src="js/jquery.nivo.zoom.pack.js"></script>
 	<script type="text/javascript" src="js/site.js"></script>
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </head>
+
 <body class="standardPage">
-	<div class="navigationBar">
-        guest@pedroboechat.com:<a href="index.html">~/</a><a href="computer_graphics.html">computer_graphics</a>
-    </div>
-    <div class="navigationHint">
-        <p><img src="images/ArrowsNavigationHint.png"/></p>
-        <p>Use arrows keys to navigate through items...</p>
-    </div>
-    <div class="navigationHint">
-        <p><img src="images/WASDKeysNavigationHint.png"/></p>
-        <p>...WASD keys will work too.</p>
-    </div>
-    <div class="navigationHint">
-        <p><img src="images/ReturnNavigationHint.png"/></p>
-        <p>Use RETURN to open/close current selected item.</p>
-    </div>
-    <div class="navigationHint">
-        <p><img src="images/EscapeNavigationHint.png"/></p>
-        <p>Use escape to close current item or return home (if no item is selected).</p>
-    </div>
-	<div class="accordion">
-    <!-- OperatorGraph-->
-    <h3>OperatorGraph</h3>
-	<div>
-		<p>
-            <b>OperatorGraph</b> is the reference implementation for the ideas exposed in the paper <a href="publications/operator_graph.pdf" target="_blank">Representing and Scheduling Procedural Generation using Operator Graphs</a>.
-        </p>
-        <p>
-            <iframe width="400" height="240" src="https://www.youtube.com/embed/CvAlSffwB18?list=PLgV_NS3scu1yDnjMd8m-hLoRgG8Ql7xWN" frameborder="0" allowfullscreen></iframe>
-        </p>
-		<p>
-            It's essentially a toolkit offers an end-to-end solution to compile shape grammars as programs that efficiently run on CUDA enabled GPUs.
-        </p>
-        <p>
-            The toolkit consists of: 
-            <ul>
-                <li>a shape grammar interpreter,</li>
-                <li>a C++/CUDA library and</li>
-                <li>a GPU execution auto-tuner.</li>
-            </ul>
-        </p>
-        <p>
-            The implemented shape grammar - <i>PGA-shape</i> - is a rule-based language that enable users to express sequences of modeling operations in a high level of abstraction. 
-        </p>
-        <p>
-            <i>PGA-shape</i> can be used as a C++/CUDA idiom or as a domain specific language (DSL). For example, to model a <a href="https://en.wikipedia.org/wiki/Menger_sponge" target="_target">Menger sponge</a>,
-            you could write the following grammar in <i>PGA-shape</i>  C++/CUDA,</p>
-            <pre class="prettyprint lang-cpp">
+	<header class="navigationBar" role="banner">
+		<nav class="quickNav" aria-label="Quick navigation">
+			<a href="games.html">games</a>
+			<a href="computer_graphics.html" aria-current="page">computer graphics</a>
+			<a href="computer_architecture.html">computer architecture</a>
+			<a href="others.html">others</a>
+			<a href="about.html">about</a>
+		</nav>
+	</header>
+	<main>
+		<div class="navigationHint" aria-live="polite">
+			<p><img src="images/ArrowsNavigationHint.png" alt="Arrows navigation hint" /></p>
+			<p>Use arrows keys to navigate through items...</p>
+		</div>
+		<div class="navigationHint" aria-live="polite">
+			<p><img src="images/WASDKeysNavigationHint.png" alt="WASD keys hint" /></p>
+			<p>...WASD keys will work too.</p>
+		</div>
+		<div class="navigationHint" aria-live="polite">
+			<p><img src="images/ReturnNavigationHint.png" alt="Return key hint" /></p>
+			<p>Use RETURN to open/close current selected item.</p>
+		</div>
+		<div class="navigationHint" aria-live="polite">
+			<p><img src="images/EscapeNavigationHint.png" alt="Escape key hint" /></p>
+			<p>Use escape to close current item or return home (if no item is selected).</p>
+		</div>
+		<div class="accordion">
+			<!-- OperatorGraph-->
+			<h3>OperatorGraph</h3>
+			<div>
+				<p>
+					<b>OperatorGraph</b> is the reference implementation for the ideas exposed in the paper <a
+						href="publications/operator_graph.pdf" target="_blank">Representing and Scheduling Procedural
+						Generation using Operator Graphs</a>.
+				</p>
+				<p>Visit <a href="https://github.com/pboechat/triangulate" target="_blank">project website</a></p>
+				<iframe width="400" height="240"
+					src="https://www.youtube.com/embed/CvAlSffwB18?list=PLgV_NS3scu1yDnjMd8m-hLoRgG8Ql7xWN"
+					frameborder="0" allowfullscreen></iframe>
+				</p>
+				<p>
+					It's essentially a toolkit offers an end-to-end solution to compile shape grammars as programs that
+					efficiently run on CUDA enabled GPUs.
+				</p>
+				<p>
+					The toolkit consists of:
+				<ul>
+					<li>a shape grammar interpreter,</li>
+					<li>a C++/CUDA library and</li>
+					<li>a GPU execution auto-tuner.</li>
+				</ul>
+				</p>
+				<p>
+					The implemented shape grammar - <i>PGA-shape</i> - is a rule-based language that enable users to
+					express sequences of modeling operations in a high level of abstraction.
+				</p>
+				<p>
+					<i>PGA-shape</i> can be used as a C++/CUDA idiom or as a domain specific language (DSL). For
+					example, to model a <a href="https://en.wikipedia.org/wiki/Menger_sponge" target="_target">Menger
+						sponge</a>,
+					you could write the following grammar in <i>PGA-shape</i> C++/CUDA,
+				</p>
+				<pre class="prettyprint lang-cpp">
 struct Rules : T::List <
     /* rule[0]= */ Proc < Box, Subdivide<DynParam<0>, T::Pair< DynParam<1>, DCall<0>>, T::Pair< DynParam<2>, DCall<1>>, T::Pair< DynParam<3>, DCall<2>>>, 1>,
     /* rule[1]= */ Proc < Box, Discard, 1>,
@@ -69,8 +88,8 @@ struct Rules : T::List <
     DynParam<0>>, 1>,
 > {};
             </pre>
-            or the equivalent grammar in <i>PGA-shape</i>  DSL...
-            <pre class="prettyprint">
+				or the equivalent grammar in <i>PGA-shape</i> DSL...
+				<pre class="prettyprint">
 axiom Box A;
 
 terminal B (1,0);
@@ -82,98 +101,123 @@ SubZ = SubDiv(Z) { -1: A | -1: A | -1: A };
 SubY = SubDiv(Y) { -1: SubZ | -1: ZDiscard | -1: SubZ };
 SubX = SubDiv(X) { -1: SubY | -1: YDiscard | -1: SubY }
             </pre>
-            Resulting in the following Menger sponge:
-            <a href="images/operator-graph-menger-sponge.png" class="nivoZoom">
-				<img src="images/operator-graph-menger-sponge-mini.png" />
-			</a>
-        </p>
-        <p>
-            Grammars written with the C++/CUDA variant can be embedded in OpenGL/Direct3D applications,
-            while grammars written with the DSL can be executed on the GPU with the interpreter shipped with the toolkit. 
-            The interpreter can also be embedded in an OpenGL/Direct3D application.
-        </p>
-        <p>
-            The main difference between the two methods is that with C++/CUDA the structure of the grammars directly influence the GPU scheduling, 
-            while with the DSL the execution on the GPU is scheduled the same way, independently of the grammar structure.
-        </p>
-        <p>
-            Grammars written with <i>PGA-shape</i>  DSL can be analyzed by the auto-tunner and be optimized for GPU execution.
-            The auto-tuner translates the DSL code to an intermediary representation - the <i>operator graph</i> - and then exploits the graph structure 
-            to find the best GPU scheduling for this grammar. 
-            When the best scheduling is found, the auto-tuner translates back the <i>operator graph</i> into C++/CUDA code.
-            For more information, please refer to the paper.
-        </p>
-		<p>
-            Visit <a href="https://github.com/pboechat/OperatorGraph/" target="_blank">project website</a>
-        </p>
-	</div>
-    <!-- OperatorGraph-->
-	<!-- PCSS -->
-	<h3>PCSS</h3>
-	<div>
-		<p><b>PCSS</b> is a C++/OpenGL implementation of the <a href="http://developer.download.nvidia.com/shaderlibrary/docs/shadow_PCSS.pdf" target="_blank">Percentage-Closer Soft Shadows</a> technique.</p>
-		<p>Developed during my PhD's <a href="http://www.cgv.tugraz.at/CGV/Teaching/Realism" target="_blank">photorealistic rendering</a> course.</p>
-		<p><iframe width="400" height="240" src="http://www.youtube.com/embed/g-AFYDhyN3w?feature=player_detailpage" frameborder="0" allowfullscreen></iframe></p>
-		<p>Visit <a href="https://github.com/pboechat/PCSS/" target="_blank">project website</a></p>
-	</div>
-	<!-- PCSS -->
-    <!-- cook-torrance -->
-	<h3>cook-torrance</h3>
-	<div>
-		<p><b>cook-torrance</b> is a C++/OpenGL implementation of the <a href="http://dl.acm.org/citation.cfm?id=357293" target="_blank">cook-torrance shader model</a>.</p>
-		<p>Developed during my PhD's <a href="http://www.cgv.tugraz.at/CGV/Teaching/Realism" target="_blank">photorealistic rendering</a> course.</p>
-		<p>
-            <a href="images/cook-torrance-stanford-bunny.png" class="nivoZoom">
-				<img src="images/cook-torrance-stanford-bunny-mini.png" />
-			</a>
-        </p>
-		<p>Visit <a href="https://github.com/pboechat/cook-torrance/" target="_blank">project website</a></p>
-	</div>
-	<!-- cook-torrance -->
-	<!-- SAT.js -->
-	<h3>SAT.js</h3>
-	<div>
-		<p><b>SAT.js</b> is a Javascript implementation of the Separating Axis Theorem for convex polygons and polyhedra.</p>
-		<p>Built with JavaScript and <a href="http://threejs.org/" target="_blank">three.js</a>.</p>
-		<p>Based on this <a href="http://www.geometrictools.com/Documentation/MethodOfSeparatingAxes.pdf" target="_blank">article</a>.</p>
-		<p>Also comes with a <a href="SAT.js/3D/main.html" target="_blank">demo application</a> that allows you to visualize SAT steps interactively:</p>
-		<p><iframe width="400" height="240" src="http://www.youtube.com/embed/djKUDMbGMM4?feature=player_detailpage" frameborder="0" allowfullscreen></iframe></p>
-		<p>Visit <a href="https://github.com/pboechat/SAT.js" target="_blank">project website</a></p>
-	</div>
-	<!-- SAT.js -->
-    <!-- roadgen -->
-    <h3>roadgen</h3>
-    <div>
-        <p>
-            <b>roadgen</b> is a road network generation tool based on the article <a href="" target="_blank">Procedural Modeling of Cities</a>. It was built with C# and <a href="http://unity3d.com/" target="_blank">Unity</a> personal edition.
-        </p>
-        <p>
-            It features:
-            <ul>
-                <li>road network generation/manipulation</li>
-                <li>basic road network geometry construction</li>
-                <li>basic building allotment distribution</li>
-            </ul>
-        </p>
-        <a href="images/roadgen.png" class="nivoZoom">
-            <img src="images/roadgen-mini.png" />
-        </a>
-        <p>Visit <a href="https://github.com/pboechat/roadgen" target="_blank">project website</a></p>
-    </div>
-    <!-- roadgen -->
-    <!-- LSYSTEMSINUNITY -->
-    <h3>L-Systems in Unity</h3>
-    <div>
-        <p>
-            <b>L-Systems in Unity</b> is a set of scripts that enables Unity developers to rapidly create plants in their games using L-Systems.
-        </p>
-        <p>
-            It's based on the book <a href="https://www.amazon.com/Algorithmic-Beauty-Plants-Virtual-Laboratory/dp/0387946764">Algorithmic Beauty of Plants</a> and 
-            supports most of the context-free examples (0L-systems) presented there.
-        </p>
-        <p>
-            For example, with the 0L-system below, some simple assets and straight-forward configuration one can generate a fairly complex tree:
-            <pre class="prettyprint">
+				Resulting in the following Menger sponge:
+				<a href="images/operator-graph-menger-sponge.png" class="nivoZoom">
+					<img src="images/operator-graph-menger-sponge-mini.png" />
+				</a>
+				</p>
+				<p>
+					Grammars written with the C++/CUDA variant can be embedded in OpenGL/Direct3D applications,
+					while grammars written with the DSL can be executed on the GPU with the interpreter shipped with the
+					toolkit.
+					The interpreter can also be embedded in an OpenGL/Direct3D application.
+				</p>
+				<p>
+					The main difference between the two methods is that with C++/CUDA the structure of the grammars
+					directly influence the GPU scheduling,
+					while with the DSL the execution on the GPU is scheduled the same way, independently of the grammar
+					structure.
+				</p>
+				<p>
+					Grammars written with <i>PGA-shape</i> DSL can be analyzed by the auto-tunner and be optimized for
+					GPU execution.
+					The auto-tuner translates the DSL code to an intermediary representation - the <i>operator graph</i>
+					- and then exploits the graph structure
+					to find the best GPU scheduling for this grammar.
+					When the best scheduling is found, the auto-tuner translates back the <i>operator graph</i> into
+					C++/CUDA code.
+					For more information, please refer to the paper.
+				</p>
+				<p>
+					Visit <a href="https://github.com/pboechat/OperatorGraph/" target="_blank">project website</a>
+				</p>
+			</div>
+			<!-- OperatorGraph-->
+			<!-- PCSS -->
+			<h3>PCSS</h3>
+			<div>
+				<p><b>PCSS</b> is a C++/OpenGL implementation of the <a
+						href="http://developer.download.nvidia.com/shaderlibrary/docs/shadow_PCSS.pdf"
+						target="_blank">Percentage-Closer Soft Shadows</a> technique.</p>
+				<p>Developed during my PhD's <a href="http://www.cgv.tugraz.at/CGV/Teaching/Realism"
+						target="_blank">photorealistic rendering</a> course.</p>
+				<p><iframe width="400" height="240"
+						src="http://www.youtube.com/embed/g-AFYDhyN3w?feature=player_detailpage" frameborder="0"
+						allowfullscreen></iframe></p>
+				<p>Visit <a href="https://github.com/pboechat/PCSS/" target="_blank">project website</a></p>
+			</div>
+			<!-- PCSS -->
+			<!-- cook-torrance -->
+			<h3>cook-torrance</h3>
+			<div>
+				<p><b>cook-torrance</b> is a C++/OpenGL implementation of the <a
+						href="http://dl.acm.org/citation.cfm?id=357293" target="_blank">cook-torrance shader model</a>.
+				</p>
+				<p>Developed during my PhD's <a href="http://www.cgv.tugraz.at/CGV/Teaching/Realism"
+						target="_blank">photorealistic rendering</a> course.</p>
+				<p>
+					<a href="images/cook-torrance-stanford-bunny.png" class="nivoZoom">
+						<img src="images/cook-torrance-stanford-bunny-mini.png" />
+					</a>
+				</p>
+				<p>Visit <a href="https://github.com/pboechat/cook-torrance/" target="_blank">project website</a></p>
+			</div>
+			<!-- cook-torrance -->
+			<!-- SAT.js -->
+			<h3>SAT.js</h3>
+			<div>
+				<p><b>SAT.js</b> is a Javascript implementation of the Separating Axis Theorem for convex polygons and
+					polyhedra.</p>
+				<p>Built with JavaScript and <a href="http://threejs.org/" target="_blank">three.js</a>.</p>
+				<p>Based on this <a href="http://www.geometrictools.com/Documentation/MethodOfSeparatingAxes.pdf"
+						target="_blank">article</a>.</p>
+				<p>Also comes with a <a href="SAT.js/3D/main.html" target="_blank">demo application</a> that allows you
+					to visualize SAT steps interactively:</p>
+				<p><iframe width="400" height="240"
+						src="http://www.youtube.com/embed/djKUDMbGMM4?feature=player_detailpage" frameborder="0"
+						allowfullscreen></iframe></p>
+				<p>Visit <a href="https://github.com/pboechat/SAT.js" target="_blank">project website</a></p>
+			</div>
+			<!-- SAT.js -->
+			<!-- roadgen -->
+			<h3>roadgen</h3>
+			<div>
+				<p>
+					<b>roadgen</b> is a road network generation tool based on the article <a href=""
+						target="_blank">Procedural Modeling of Cities</a>. It was built with C# and <a
+						href="http://unity3d.com/" target="_blank">Unity</a> personal edition.
+				</p>
+				<p>
+					It features:
+				<ul>
+					<li>road network generation/manipulation</li>
+					<li>basic road network geometry construction</li>
+					<li>basic building allotment distribution</li>
+				</ul>
+				</p>
+				<a href="images/roadgen.png" class="nivoZoom">
+					<img src="images/roadgen-mini.png" />
+				</a>
+				<p>Visit <a href="https://github.com/pboechat/roadgen" target="_blank">project website</a></p>
+			</div>
+			<!-- roadgen -->
+			<!-- LSYSTEMSINUNITY -->
+			<h3>L-Systems in Unity</h3>
+			<div>
+				<p>
+					<b>L-Systems in Unity</b> is a set of scripts that enables Unity developers to rapidly create plants
+					in their games using L-Systems.
+				</p>
+				<p>
+					It's based on the book <a
+						href="https://www.amazon.com/Algorithmic-Beauty-Plants-Virtual-Laboratory/dp/0387946764">Algorithmic
+						Beauty of Plants</a> and
+					supports most of the context-free examples (0L-systems) presented there.
+				</p>
+				<p>
+					For example, with the 0L-system below, some simple assets and straight-forward configuration one can
+					generate a fairly complex tree:
+				<pre class="prettyprint">
 // 3D Tree 1.txt
 
 axiom=F
@@ -182,187 +226,241 @@ number of derivations=3
 
 F=(1)F[-&^F][^++&F]||F[--&^F][+&F]
             </pre>
-            <br/>
-            <img src="images/LSystemInUnity3.png" /><img src="images/LSystemInUnity4.png" /> <br/>
-            <br/>
-            <img src="images/LSystemInUnity1.png" /> <br/>
-            <br/>
-            <a href="images/LSystemInUnity2.png" class="nivoZoom">
-                <img src="images/LSystemInUnity2-mini.png" />
-            </a>
-        </p>
-        <p>Visit the <a href="https://github.com/pboechat/LSystemsInUnity" target="_blank">project website</a></p>
-    </div>
-    <!-- LSYSTEMSINUNITY -->
-	<!-- FASTCG -->
-	<h3>FastCG</h3>
-	<div>
-		<p><b>FastCG</b> is a thin C++ framework for rapid prototyping of virtual reality applications.</p>
-		<p>Developed during my master's <a href="http://www.tecgraf.puc-rio.br/~celes/inf2610/Home.html" target="_blank">realtime rendering</a> course, it features:
-			<ul>
-				<li>basic materials: diffuse, specular, bump, etc.</li>
-				<li>deferred rendering</li>
-				<li>screen space ambient occlusion</li>
-				<li>model/texture importer (through <a href="http://openil.sourceforge.net/" target="_blank">DevIL</a> and <a href="http://assimp.sourceforge.net/" target="_blank">assimp</a>)</li>
-				<li>very simple shader management</li>
-				<li>true type font support</li>
-				<li>API similar to <a href="http://unity3d.com">Unity</a>'s</li>
-				<li>OpenGL 4</li>
-			</ul>
-		</p>
-		<p><iframe width="400" height="240" src="http://www.youtube.com/embed/kmhX0MCSwjU?feature=player_detailpage" frameborder="0" allowfullscreen></iframe></p>
-		<p><iframe width="400" height="240" src="http://www.youtube.com/embed/t2OuWdy6l10?feature=player_detailpage" frameborder="0" allowfullscreen></iframe></p>
-		<p><iframe width="400" height="240" src="http://www.youtube.com/embed/acGMmt0RgT8?feature=player_detailpage" frameborder="0" allowfullscreen></iframe></p>
-		<p>Visit <a href="https://github.com/pboechat/FastCG/" target="_blank">project website</a></p>
-	</div>
-	<!-- FASTCG -->
-	<!-- SIMPLERAYTRACER -->
-	<h3>simpleraytracer</h3>
-	<div>
-		<p><b>simpleraytracer</b> is an implementation of a very simple raytracer in C++ using Win32 and OpenGL.</p>
-		<p>It features:</p>
-		<p>
-			<ul>
-				<li>parametric geometries (spheres/AABBs) and triangle meshes rendering</li>
-				<li>blinn/phong shading local illumination model</li>
-				<li>hard shadows</li>
-				<li>textured, reflective and refractive materials</li>
-				<li>XML scene description loader</li>
-				<li>exports Unity scenes (via Plugin)</li>
-			</ul>
-		</p>
-		<p>
-			<a href="images/SimpleRayTracer1.png" class="nivoZoom">
-				<img src="images/SimpleRayTracer1-mini.png" />
-			</a>
-			<a href="images/SimpleRayTracer2.png" class="nivoZoom">
-				<img src="images/SimpleRayTracer2-mini.png" />
-			</a>
-			<a href="images/SimpleRayTracer3.png" class="nivoZoom">
-				<img src="images/SimpleRayTracer3-mini.png" />
-			</a>
-		</p>
-		<p>
-			<a href="images/SimpleRayTracer4.png" class="nivoZoom">
-				<img src="images/SimpleRayTracer4-mini.png" />
-			</a>
-			<a href="images/SimpleRayTracer5.png" class="nivoZoom">
-				<img src="images/SimpleRayTracer5-mini.png" />
-			</a>
-			<a href="images/SimpleRayTracer6.png" class="nivoZoom">
-				<img src="images/SimpleRayTracer6-mini.png" />
-			</a>
-		</p>
-		<p>
-			<a href="images/SimpleRayTracer7.png" class="nivoZoom">
-				<img src="images/SimpleRayTracer7-mini.png" />
-			</a>
-		</p>
-		<p>Visit <a href="https://www.assembla.com/code/LSystemOnGPU/subversion/nodes/" target="_blank">project website</a></p>
-	</div>
-	<!-- SIMPLERAYTRACER -->
-	<!-- IMAGEPROCESSING.JS -->
-	<h3>ImageProcessing.js</h3>
-	<div>
-		<p><b>ImageProcessing.js</b> is a pure Javascript/HTML5 implementation of some common image processing algorithms.</p>
-		<p>It features:</p>
-		<p>
-			<ul>
-				<li>brightness/contract adjustments</li>
-				<li>low and high-pass filters: gaussian, median, laplacian, sobel and prewitt</li>
-				<li>binarization methods: histogram thresholding and otsu's</li>
-				<li>fourier transforms: filtering and frequency domain visualization</li>
-			</ul>
-		</p>
-		<p>
-			
-			<img src="images/white-noise-removal.png" alt="White noise removal" />
-		</p>
-		<p>
-			<img src="images/binarization-methods.png" alt="Binarization" />
-		</p>
-		<p>
-			<img src="images/fourier-filtering.png" alt="Fourier filtering" />
-		</p>
-		<p>
-			<img src="images/frequency-domain-visualization.png" alt="Frequency domain visualization" />
-		</p>
-		<p>Visit the <a href="https://github.com/pboechat/ImageProcessing.js" target="_blank">project website</a> or <br/>
-		run it <a href="/ImageProcessing.js/" target="_blank">here</a>.</p>
-	</div>
-	<!-- IMAGEPROCESSING.JS -->
-	<!-- LSYSTEMSONTHEGPU -->
-	<h3>L-Systems on the GPU</h3>
-	<div>
-		<p>
-            <b>L-Systems on the GPU</b> is an application that does parallel rewriting and interpretation of L-Systems on the GPU.
-        </p>
-		<p>
-            It's based on the article <a href="downloads/Parallel Generation of L-Systems.pdf">Parallel Generation of L-Systems</a>, but unlike the solution presented there, built with plain GLSL shaders instead of CUDA (GPGPU the old way!).
-        </p>
-		<p>
-            Developed as a final project for the <a href="http://www.tecgraf.puc-rio.br/~abraposo/inf2063/" target="_blank">computer graphics topics II</a> course taken during my masters.
-        </p>
-		<p>
-			<img src="images/LSystemOnGPU.gif"/>
-		</p>
-		<p>Visit <a href="https://www.assembla.com/code/LSystemOnGPU/subversion/nodes/" target="_blank">project website</a></p>
-	</div>
-	<!-- LSYSTEMSONTHEGPU -->
-	<!-- TRIANGULATE -->
-	<h3>Triangulate</h3>
-	<div>
-		<p><b>Triangulate</b> is a C++ library that puts together some traditional computational geometry algorithms such as convex hull building and polygon triangulation.</p>
-		<p>Currently provides the following implementations: <i>ear clipping triangulation</i> (based on this <a href="http://www.geometrictools.com/Documentation/TriangulationByEarClipping.pdf" target="_blank">article</a>), <i>graham scanning</i> and <i>divide-and-conquer convex hull</i> (based on the descriptions available in this <a href="http://www.amazon.com/Discrete-Computational-Geometry-Satyan-Devadoss/dp/0691145539" target="_blank">very good book</a>).</p>
-		<p>Also comes with two applications that demonstrate the results of the aforementioned algorithms</p>
-		<p>
-			<a href="images/ConvexHullDemo.png" class="nivoZoom">
-				<img src="images/ConvexHullDemo-mini.png" />
-			</a>
-			<a href="images/EarClippingTriangulationDemo.png" class="nivoZoom">
-				<img src="images/EarClippingTriangulationDemo-mini.png" />
-			</a>
-		</p>
-		<p>It was developed as an execise for the <a href="http://www-di.inf.puc-rio.br/~lopes/courses/inf2604---geometria-computa.html" target="_blank">computational geometry course</a> taken during my masters.</p>
-		<p>Visit <a href="https://www.assembla.com/code/triangulate-library/subversion/nodes/" target="_blank">project website</a></p>
-	</div>
-	<!-- TRIANGULATE -->
-	<!-- XITHCLUSTER -->
-	<h3>xithcluster</h3>
-	<div>
-		<p><b>xithcluster</b> is an extention to the Java scene graph library <a href="http://xith.org/" target="_blank">Xith3D</a>.</p>
-		<p>A complete solution to distribute rendering between multiple computers (using a method called <a href="http://en.wikipedia.org/wiki/Parallel_rendering#Object_distribution" target="_blank">sort-last</a>).</p>
-		<p>Developed as my final graduation project.</p>
-		<p>Published in the 8th Brazilian Virtual and Augmented Reality Workshop (WRVA). You can download it <a href="/publications/XithCluster%20-%20Uma%20Biblioteca%20de%20Grafo%20de%20Cena%20Distribu%C3%ADdo.pdf" target="_blank">here</a> (unfortunately only in portuguese).</p>
-		<p>Visit <a href="http://code.google.com/p/xithcluster/" target="_blank">project website</a></p>
-	</div>
-	<!-- XITHCLUSTER -->
-	<!-- SIMPLESCENEGRAPH -->
-	<h3>simplescenegraph</h3>
-	<div>
-		<p><b>simplescenegraph</b> is, as the name says, a scene graph. Scene graphs are data structures that help you manage 3D objects in a scene.</p> 
-		<p>Developed for an <a href="http://www.ic.uff.br/~ferraz/site_ferraz/pag_2.htm" target="_blank">advanced data structure course</a> taken in graduation.</p>
-		<p>While developing it, I was heavily influenced by the reading of <a href="http://www.amazon.com/Game-Engine-Design-Second-Interactive/dp/0122290631" target="_blank">this incredible book</a>.</p>
-		<p>
-			<a href="images/SimpleSceneGraph1.png" class="nivoZoom">
-				<img src="images/SimpleSceneGraph1-mini.png" />
-			</a>
-			<a href="images/SimpleSceneGraph2.png" class="nivoZoom">
-				<img src="images/SimpleSceneGraph2-mini.png" />
-			</a>
-		</p>
-		<p>The code also contains an unfinished shoot'em up.</p>
-		<p>
-			<a href="images/SimpleSceneGraph3.png" class="nivoZoom">
-				<img src="images/SimpleSceneGraph3-mini.png" />
-			</a>
-		</p>
-		<p>Visit <a href="http://code.google.com/p/simplescenegraph/" target="_blank">project website</a></p>
-		<p>Download <a href="downloads/samplescene1.zip">sample</a></p>
-	</div>
-	<!-- SIMPLESCENEGRAPH -->
-	<!-- HEIGHTMAP GENERATOR -->
-	<!--<h3>HeightMap Generator</h3>
+				<br />
+				<img src="images/LSystemInUnity3.png" /><img src="images/LSystemInUnity4.png" /> <br />
+				<br />
+				<img src="images/LSystemInUnity1.png" /> <br />
+				<br />
+				<a href="images/LSystemInUnity2.png" class="nivoZoom">
+					<img src="images/LSystemInUnity2-mini.png" />
+				</a>
+				</p>
+				<p>Visit the <a href="https://github.com/pboechat/LSystemsInUnity" target="_blank">project website</a>
+				</p>
+			</div>
+			<!-- LSYSTEMSINUNITY -->
+			<!-- FASTCG -->
+			<h3>FastCG</h3>
+			<div>
+				<p><b>FastCG</b> is a thin C++ framework for rapid prototyping of virtual reality applications.</p>
+				<p>Developed during my master's <a href="http://www.tecgraf.puc-rio.br/~celes/inf2610/Home.html"
+						target="_blank">realtime rendering</a> course, it features:
+				<ul>
+					<li>basic materials: diffuse, specular, bump, etc.</li>
+					<li>deferred rendering</li>
+					<li>screen space ambient occlusion</li>
+					<li>model/texture importer (through <a href="http://openil.sourceforge.net/"
+							target="_blank">DevIL</a> and <a href="http://assimp.sourceforge.net/"
+							target="_blank">assimp</a>)</li>
+					<li>very simple shader management</li>
+					<li>true type font support</li>
+					<li>API similar to <a href="http://unity3d.com">Unity</a>'s</li>
+					<li>OpenGL 4</li>
+				</ul>
+				</p>
+				<p><iframe width="400" height="240"
+						src="http://www.youtube.com/embed/kmhX0MCSwjU?feature=player_detailpage" frameborder="0"
+						allowfullscreen></iframe></p>
+				<p><iframe width="400" height="240"
+						src="http://www.youtube.com/embed/t2OuWdy6l10?feature=player_detailpage" frameborder="0"
+						allowfullscreen></iframe></p>
+				<p><iframe width="400" height="240"
+						src="http://www.youtube.com/embed/acGMmt0RgT8?feature=player_detailpage" frameborder="0"
+						allowfullscreen></iframe></p>
+				<p>Visit <a href="https://github.com/pboechat/FastCG/" target="_blank">project website</a></p>
+			</div>
+			<!-- FASTCG -->
+			<!-- SIMPLERAYTRACER -->
+			<h3>simpleraytracer</h3>
+			<div>
+				<p><b>simpleraytracer</b> is an implementation of a very simple raytracer in C++ using Win32 and OpenGL.
+				</p>
+				<p>It features:</p>
+				<p>
+				<ul>
+					<li>parametric geometries (spheres/AABBs) and triangle meshes rendering</li>
+					<li>blinn/phong shading local illumination model</li>
+					<li>hard shadows</li>
+					<li>textured, reflective and refractive materials</li>
+					<li>XML scene description loader</li>
+					<li>exports Unity scenes (via Plugin)</li>
+				</ul>
+				</p>
+				<p>
+					<a href="images/SimpleRayTracer1.png" class="nivoZoom">
+						<img src="images/SimpleRayTracer1-mini.png" />
+					</a>
+					<a href="images/SimpleRayTracer2.png" class="nivoZoom">
+						<img src="images/SimpleRayTracer2-mini.png" />
+					</a>
+					<a href="images/SimpleRayTracer3.png" class="nivoZoom">
+						<img src="images/SimpleRayTracer3-mini.png" />
+					</a>
+				</p>
+				<p>
+					<a href="images/SimpleRayTracer4.png" class="nivoZoom">
+						<img src="images/SimpleRayTracer4-mini.png" />
+					</a>
+					<a href="images/SimpleRayTracer5.png" class="nivoZoom">
+						<img src="images/SimpleRayTracer5-mini.png" />
+					</a>
+					<a href="images/SimpleRayTracer6.png" class="nivoZoom">
+						<img src="images/SimpleRayTracer6-mini.png" />
+					</a>
+				</p>
+				<p>
+					<a href="images/SimpleRayTracer7.png" class="nivoZoom">
+						<img src="images/SimpleRayTracer7-mini.png" />
+					</a>
+				</p>
+				<p>Visit <a href="https://www.assembla.com/code/LSystemOnGPU/subversion/nodes/" target="_blank">project
+						website</a></p>
+				<p>Also on GitHub: <a href="https://github.com/pboechat/simpleraytracer"
+						target="_blank">simpleraytracer</a></p>
+			</div>
+			<!-- SIMPLERAYTRACER -->
+			<!-- IMAGEPROCESSING.JS -->
+			<h3>ImageProcessing.js</h3>
+			<div>
+				<p><b>ImageProcessing.js</b> is a pure Javascript/HTML5 implementation of some common image processing
+					algorithms.</p>
+				<p>It features:</p>
+				<p>
+				<ul>
+					<li>brightness/contract adjustments</li>
+					<li>low and high-pass filters: gaussian, median, laplacian, sobel and prewitt</li>
+					<li>binarization methods: histogram thresholding and otsu's</li>
+					<li>fourier transforms: filtering and frequency domain visualization</li>
+				</ul>
+				</p>
+				<p>
+
+					<img src="images/white-noise-removal.png" alt="White noise removal" />
+				</p>
+				<p>
+					<img src="images/binarization-methods.png" alt="Binarization" />
+				</p>
+				<p>
+					<img src="images/fourier-filtering.png" alt="Fourier filtering" />
+				</p>
+				<p>
+					<img src="images/frequency-domain-visualization.png" alt="Frequency domain visualization" />
+				</p>
+				<p>Visit the <a href="https://github.com/pboechat/ImageProcessing.js" target="_blank">project
+						website</a> or <br />
+					run it <a href="/ImageProcessing.js/" target="_blank">here</a>.</p>
+			</div>
+			<!-- IMAGEPROCESSING.JS -->
+			<!-- LSYSTEMSONTHEGPU -->
+			<h3>L-Systems on the GPU</h3>
+			<div>
+				<p>
+					<b>L-Systems on the GPU</b> is an application that does parallel rewriting and interpretation of
+					L-Systems on the GPU.
+				</p>
+				<p>
+					It's based on the article <a href="downloads/Parallel Generation of L-Systems.pdf">Parallel
+						Generation of L-Systems</a>, but unlike the solution presented there, built with plain GLSL
+					shaders instead of CUDA (GPGPU the old way!).
+				</p>
+				<p>
+					Developed as a final project for the <a href="http://www.tecgraf.puc-rio.br/~abraposo/inf2063/"
+						target="_blank">computer graphics topics II</a> course taken during my masters.
+				</p>
+				<p>
+					<img src="images/LSystemOnGPU.gif" />
+				</p>
+				<p>Visit <a href="https://www.assembla.com/code/LSystemOnGPU/subversion/nodes/" target="_blank">project
+						website</a></p>
+			</div>
+			<!-- LSYSTEMSONTHEGPU -->
+			<!-- TRIANGULATE -->
+			<h3>Triangulate</h3>
+			<div>
+				<p><b>Triangulate</b> is a C++ library that puts together some traditional computational geometry
+					algorithms such as convex hull building and polygon triangulation.</p>
+				<p>Currently provides the following implementations: <i>ear clipping triangulation</i> (based on this <a
+						href="http://www.geometrictools.com/Documentation/TriangulationByEarClipping.pdf"
+						target="_blank">article</a>), <i>graham scanning</i> and <i>divide-and-conquer convex hull</i>
+					(based on the descriptions available in this <a
+						href="http://www.amazon.com/Discrete-Computational-Geometry-Satyan-Devadoss/dp/0691145539"
+						target="_blank">very good book</a>).</p>
+				<p>Also comes with two applications that demonstrate the results of the aforementioned algorithms</p>
+				<p>
+					<a href="images/ConvexHullDemo.png" class="nivoZoom">
+						<img src="images/ConvexHullDemo-mini.png" />
+					</a>
+					<a href="images/EarClippingTriangulationDemo.png" class="nivoZoom">
+						<img src="images/EarClippingTriangulationDemo-mini.png" />
+					</a>
+				</p>
+				<p>It was developed as an execise for the <a
+						href="http://www-di.inf.puc-rio.br/~lopes/courses/inf2604---geometria-computa.html"
+						target="_blank">computational geometry course</a> taken during my masters.</p>
+				<p>Visit <a href="https://www.assembla.com/code/triangulate-library/subversion/nodes/"
+						target="_blank">project website</a></p>
+			</div>
+			<!-- TRIANGULATE -->
+			<!-- ShapeGrammars.js -->
+			<h3>ShapeGrammars.js</h3>
+			<div>
+				<p><b>ShapeGrammars.js</b> brings shape grammars to the browser.</p>
+				<p>Visit <a href="https://github.com/pboechat/ShapeGrammars.js" target="_blank">project website</a></p>
+			</div>
+			<!-- ShapeGrammars.js -->
+			<!-- ShapeGrammarsInUnity -->
+			<h3>ShapeGrammarsInUnity</h3>
+			<div>
+				<p>Procedural generation with shape grammars in Unity.</p>
+				<p>Visit <a href="https://github.com/pboechat/ShapeGrammarsInUnity" target="_blank">project website</a>
+				</p>
+			</div>
+			<!-- ShapeGrammarsInUnity -->
+			<!-- XITHCLUSTER -->
+			<h3>xithcluster</h3>
+			<div>
+				<p><b>xithcluster</b> is an extention to the Java scene graph library <a href="http://xith.org/"
+						target="_blank">Xith3D</a>.</p>
+				<p>A complete solution to distribute rendering between multiple computers (using a method called <a
+						href="http://en.wikipedia.org/wiki/Parallel_rendering#Object_distribution"
+						target="_blank">sort-last</a>).</p>
+				<p>Developed as my final graduation project.</p>
+				<p>Published in the 8th Brazilian Virtual and Augmented Reality Workshop (WRVA). You can download it <a
+						href="/publications/XithCluster%20-%20Uma%20Biblioteca%20de%20Grafo%20de%20Cena%20Distribu%C3%ADdo.pdf"
+						target="_blank">here</a> (unfortunately only in portuguese).</p>
+				<p>Visit <a href="https://github.com/pboechat/xithcluster" target="_blank">project website</a></p>
+			</div>
+			<!-- XITHCLUSTER -->
+			<!-- SIMPLESCENEGRAPH -->
+			<h3>simplescenegraph</h3>
+			<div>
+				<p><b>simplescenegraph</b> is, as the name says, a scene graph. Scene graphs are data structures that
+					help you manage 3D objects in a scene.</p>
+				<p>Developed for an <a href="http://www.ic.uff.br/~ferraz/site_ferraz/pag_2.htm"
+						target="_blank">advanced data structure course</a> taken in graduation.</p>
+				<p>While developing it, I was heavily influenced by the reading of <a
+						href="http://www.amazon.com/Game-Engine-Design-Second-Interactive/dp/0122290631"
+						target="_blank">this incredible book</a>.</p>
+				<p>
+					<a href="images/SimpleSceneGraph1.png" class="nivoZoom">
+						<img src="images/SimpleSceneGraph1-mini.png" />
+					</a>
+					<a href="images/SimpleSceneGraph2.png" class="nivoZoom">
+						<img src="images/SimpleSceneGraph2-mini.png" />
+					</a>
+				</p>
+				<p>The code also contains an unfinished shoot'em up.</p>
+				<p>
+					<a href="images/SimpleSceneGraph3.png" class="nivoZoom">
+						<img src="images/SimpleSceneGraph3-mini.png" />
+					</a>
+				</p>
+				<p>Visit <a href="http://code.google.com/p/simplescenegraph/" target="_blank">project website</a></p>
+				<p>Download <a href="downloads/samplescene1.zip">sample</a></p>
+			</div>
+			<!-- SIMPLESCENEGRAPH -->
+			<!-- HEIGHTMAP GENERATOR -->
+			<!--<h3>HeightMap Generator</h3>
 	<div>
 		<p>This heightmap generator was developed while I was studying about procedural terrain generation (more specifically the <a href="http://en.wikipedia.org/wiki/Diamond-square_algorithm" target="_blank">square-diamond algorithm</a>).
 		<p>It's quite simple and also very old.</p>
@@ -373,8 +471,10 @@ F=(1)F[-&^F][^++&F]||F[--&^F][+&F]
 		</p>
 		<p>Visit <a href="#" target="_blank">project website</a></p>
 	</div>-->
-	<!-- HEIGHTMAP GENERATOR -->
-    </div>
-	<div class="footer" />
+			<!-- HEIGHTMAP GENERATOR -->
+		</div>
+	</main>
+	<footer class="footer" role="contentinfo"></footer>
 </body>
+
 </html>

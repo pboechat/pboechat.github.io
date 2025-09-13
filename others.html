@@ -1,101 +1,147 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-	<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">	
-	<meta http-equiv="cache-control" content="max-age=0" />
-	<meta http-equiv="cache-control" content="no-cache" />
-	<title>Pedro Boechat - games, computer graphics and other stuffs</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
-	<script type="text/javascript" src="js/jquery-ui-1.9.0.custom.min.js"></script>
-	<script type="text/javascript" src="js/jquery.corner.js"></script>
-	<script type="text/javascript" src="js/jquery.nivo.zoom.pack.js"></script>
-	<script type="text/javascript" src="js/site.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <title>Pedro Boechat - games, computer graphics and other stuffs</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.9.0.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.corner.js"></script>
+    <script type="text/javascript" src="js/jquery.nivo.zoom.pack.js"></script>
+    <script type="text/javascript" src="js/site.js"></script>
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </head>
+
 <body class="standardPage">
-	<div class="navigationBar">
-        guest@pedroboechat.com:<a href="index.html">~/</a><a href="others.html">others</a>
-    </div>
-    <div class="navigationHint">
-        <p><img src="images/ArrowsNavigationHint.png"/></p>
-        <p>Use arrows keys to navigate through items...</p>
-    </div>
-    <div class="navigationHint">
-        <p><img src="images/WASDKeysNavigationHint.png"/></p>
-        <p>...WASD keys will work too.</p>
-    </div>
-    <div class="navigationHint">
-        <p><img src="images/ReturnNavigationHint.png"/></p>
-        <p>Use RETURN to open/close current selected item.</p>
-    </div>
-    <div class="navigationHint">
-        <p><img src="images/EscapeNavigationHint.png"/></p>
-        <p>Use escape to close current item or return home (if no item is selected).</p>
-    </div>
-    <div class="accordion">
-    <!-- crypto_list -->
-    <h3>crypto_list</h3>
-    <div>
-        <p><b>crypto_list</b> is a tiny password manager written in Python.</p>
-        <p>It's allows you to create key-value pairs through a minimalistic GUI and then cryptograph this list of pairs using a symmetric-key algorithm.</p>
-        <p>
-            <a href="images/crypto-list-example.png" class="nivoZoom">
-                <img src="images/crypto-list-example-mini.png" />
-            </a>
-        </p>
-        <p>Visit <a href="https://github.com/pboechat/crypto_list" target="_blank">project website</a></p>
-    </div>
-    <!-- WiiLoad++ -->
-	<h3>WiiLoad++</h3>
-	<div>
-		<p><b>WiiLoad++</b> helps you deploy homebrew applications to Wii.</p>
-		<p>It extends the original <a href="http://wiibrew.org/wiki/Wiiload" target="_blank">wiiload</a>'s functionalities by enabling the deployment of full directories (not only .dol files).</p>
-		<p>It also makes your life easier by generating homebrew channel metadata from command line.</p>
-		<p>Visit <a href="https://www.assembla.com/code/wiiload_plusplus/subversion/nodes" target="_blank">project website</a></p>
-	</div>
-    <!-- WiiLoad++ -->
-    <!-- uunit -->
-	<h3>uunit</h3>
-	<div>
-		<p><b>uunit</b> is a xUnit test framework for <a href="http://unity3d.com/" target="_blank">Unity</a>.</p>
-		<p>Initially written in Boo (by another person), this project was almost dead until I voluntarily took its lead and ported it to C#, adding a few new features during the proccess.</p>
-		<p>Visit <a href="http://code.google.com/p/uunit/" target="_blank">Project website</a></p>
-	</div>
-    <!-- uunit -->
-    <!-- InNomine Character Sheet -->
-	<h3>InNomine Character Sheet</h3>
-    <div>
-        <p>This program enables you to create <a href="http://www.sjgames.com/innomine/" target="_blank">In Nomine</a> characters on PC, allowing you to print a nice digitalized sheet aftewards.</p>
-        <p>It uses its own file format for persisting characters on disk.</p>
-        <p>
-            <a href="images/InNomineCharacterSheet1.png" class="nivoZoom">
-                <img src="images/InNomineCharacterSheet1-mini.png" />
-            </a>
-            <a href="images/InNomineCharacterSheet2.png" class="nivoZoom">
-                <img src="images/InNomineCharacterSheet2-mini.png" />
-            </a>
-        </p>
-        <p>It was written, many years ago, in Delphi.</p>
-        <p>Visit <a href="http://code.google.com/p/innomine-character-sheet/" target="_blank">project website</a></p>
-        <p>Download <a href="downloads/InNomineDigitalCharacterSheet.zip" target="_blank">binary</a></p>
-    </div>
-    <!-- InNomine Character Sheet -->
-    <!-- decision tree -->
-	<h3>decision tree</h3>
-	<div>
-		<p>This small Java project was developed as a self-teaching effort during an artificial intelligence course taken in graduation.</p>
-		<p>It computes a decision tree from a semicolon delimited text file. All meaninful algorithms were separated in libraries.</p>
-		<p>
-			<a href="images/DecisionTree.png" class="nivoZoom">
-				<img src="images/DecisionTree-mini.png" />
-			</a>
-		</p>
-		<p>It was based on pseudocodes available on <a href="http://www.amazon.com/Artificial-Intelligence-Modern-Approach-Edition/dp/0137903952" target="_blank">this classic AI book</a>.</p>
-		<p>Download <a href="downloads/decision-tree-src.zip" target="_blank">source code</a> or <a href="downloads/decision-tree-bin.zip" target="_blank">executable package</a></p>
-	</div>
-    <!-- decision tree -->
-    </div>
-	<div class="footer" />
+    <header class="navigationBar" role="banner">
+        <nav class="quickNav" aria-label="Quick navigation">
+            <a href="games.html">games</a>
+            <a href="computer_graphics.html">computer graphics</a>
+            <a href="computer_architecture.html">computer architecture</a>
+            <a href="others.html" aria-current="page">others</a>
+            <a href="about.html">about</a>
+        </nav>
+    </header>
+    <main>
+        <div class="navigationHint" aria-live="polite">
+            <p><img src="images/ArrowsNavigationHint.png" alt="Arrows navigation hint" /></p>
+            <p>Use arrows keys to navigate through items...</p>
+        </div>
+        <div class="navigationHint" aria-live="polite">
+            <p><img src="images/WASDKeysNavigationHint.png" alt="WASD keys hint" /></p>
+            <p>...WASD keys will work too.</p>
+        </div>
+        <div class="navigationHint" aria-live="polite">
+            <p><img src="images/ReturnNavigationHint.png" alt="Return key hint" /></p>
+            <p>Use RETURN to open/close current selected item.</p>
+        </div>
+        <div class="navigationHint" aria-live="polite">
+            <p><img src="images/EscapeNavigationHint.png" alt="Escape key hint" /></p>
+            <p>Use escape to close current item or return home (if no item is selected).</p>
+        </div>
+        <div class="accordion">
+            <!-- crypto_list -->
+            <h3>crypto_list</h3>
+            <div>
+                <p><b>crypto_list</b> is a tiny password manager written in Python.</p>
+                <p>It's allows you to create key-value pairs through a minimalistic GUI and then cryptograph this list
+                    of pairs using a symmetric-key algorithm.</p>
+                <p>
+                    <a href="images/crypto-list-example.png" class="nivoZoom">
+                        <img src="images/crypto-list-example-mini.png" />
+                    </a>
+                </p>
+                <p>Visit <a href="https://github.com/pboechat/crypto_list" target="_blank">project website</a></p>
+            </div>
+            <!-- WiiLoad++ -->
+            <h3>WiiLoad++</h3>
+            <div>
+                <p><b>WiiLoad++</b> helps you deploy homebrew applications to Wii.</p>
+                <p>It extends the original <a href="http://wiibrew.org/wiki/Wiiload" target="_blank">wiiload</a>'s
+                    functionalities by enabling the deployment of full directories (not only .dol files).</p>
+                <p>It also makes your life easier by generating homebrew channel metadata from command line.</p>
+                <p>Visit <a href="https://www.assembla.com/code/wiiload_plusplus/subversion/nodes"
+                        target="_blank">project website</a></p>
+            </div>
+            <!-- WiiLoad++ -->
+            <!-- uunit -->
+            <h3>uUnit</h3>
+            <div>
+                <p><b>uunit</b> is a xUnit test framework for <a href="http://unity3d.com/" target="_blank">Unity</a>.
+                </p>
+                <p>Initially written in Boo (by another person), this project was almost dead until I voluntarily took
+                    its lead and ported it to C#, adding a few new features during the proccess.</p>
+                <p>Visit <a href="https://github.com/pboechat/uunit" target="_blank">project website</a></p>
+            </div>
+            <!-- uunit -->
+            <!-- InNomine Character Sheet -->
+            <h3>In Nomine Character Sheet</h3>
+            <div>
+                <p>This program enables you to create <a href="http://www.sjgames.com/innomine/" target="_blank">In
+                        Nomine</a> characters on PC, allowing you to print a nice digitalized sheet aftewards.</p>
+                <p>It uses its own file format for persisting characters on disk.</p>
+                <p>
+                    <a href="images/InNomineCharacterSheet1.png" class="nivoZoom">
+                        <img src="images/InNomineCharacterSheet1-mini.png" />
+                    </a>
+                    <a href="images/InNomineCharacterSheet2.png" class="nivoZoom">
+                        <img src="images/InNomineCharacterSheet2-mini.png" />
+                    </a>
+                </p>
+                <p>It was written, many years ago, in Delphi.</p>
+                <p>Visit <a href="http://code.google.com/p/innomine-character-sheet/" target="_blank">project
+                        website</a></p>
+                <p>Download <a href="downloads/InNomineDigitalCharacterSheet.zip" target="_blank">binary</a></p>
+            </div>
+            <!-- InNomine Character Sheet -->
+            <!-- decision tree -->
+            <h3>Decision Tree</h3>
+            <div>
+                <p>This small Java project was developed as a self-teaching effort during an artificial intelligence
+                    course taken in graduation.</p>
+                <p>It computes a decision tree from a semicolon delimited text file. All meaninful algorithms were
+                    separated in libraries.</p>
+                <p>
+                    <a href="images/DecisionTree.png" class="nivoZoom">
+                        <img src="images/DecisionTree-mini.png" />
+                    </a>
+                </p>
+                <p>It was based on pseudocodes available on <a
+                        href="http://www.amazon.com/Artificial-Intelligence-Modern-Approach-Edition/dp/0137903952"
+                        target="_blank">this classic AI book</a>.</p>
+                <p>Download <a href="downloads/decision-tree-src.zip" target="_blank">source code</a> or <a
+                        href="downloads/decision-tree-bin.zip" target="_blank">executable package</a></p>
+            </div>
+            <!-- decision tree -->
+            <!-- psiTTSa -->
+            <h3>psiTTSa</h3>
+            <div>
+                <p><b>psiTTSa</b> is an offline Text-To-Speech service you can host at home.</p>
+                <p>Visit <a href="https://github.com/pboechat/psiTTSa" target="_blank">project website</a></p>
+            </div>
+            <!-- psiTTSa -->
+            <!-- coding_questions -->
+            <h3>Coding Questions</h3>
+            <div>
+                <p>Assorted coding interview exercises and solutions.</p>
+                <p>Visit <a href="https://github.com/pboechat/coding_questions" target="_blank">project website</a></p>
+            </div>
+            <!-- coding_questions -->
+            <!-- neural_networks_studies -->
+            <h3>Neural Networks (Studies)</h3>
+            <div>
+                <p>Notes and experiments while studying neural networks.</p>
+                <p>Visit <a href="https://github.com/pboechat/neural_networks_studies" target="_blank">project
+                        website</a></p>
+            </div>
+            <!-- neural_networks_studies -->
+        </div>
+    </main>
+    <footer class="footer" role="contentinfo"></footer>
 </body>
+
 </html>

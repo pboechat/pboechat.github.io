@@ -1,7 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">	
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="cache-control" content="max-age=0" />
 	<meta http-equiv="cache-control" content="no-cache" />
 	<title>Pedro Boechat - games, computer graphics and other stuffs</title>
@@ -11,29 +12,36 @@
 	<script type="text/javascript" src="js/jquery.corner.js"></script>
 	<script type="text/javascript" src="js/jquery.nivo.zoom.pack.js"></script>
 	<script type="text/javascript" src="js/site.js"></script>
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </head>
 <body class="standardPage">
-	<div class="navigationBar">
-        guest@pedroboechat.com:<a href="index.html">~/</a><a href="games.html">games</a>
-    </div>
-    <div class="navigationHint">
-        <p><img src="images/ArrowsNavigationHint.png"/></p>
-        <p>Use arrows keys to navigate through items...</p>
-    </div>
-    <div class="navigationHint">
-        <p><img src="images/WASDKeysNavigationHint.png"/></p>
-        <p>...WASD keys will work too.</p>
-    </div>
-    <div class="navigationHint">
-        <p><img src="images/ReturnNavigationHint.png"/></p>
-        <p>Use RETURN to open/close current selected item.</p>
-    </div>
-    <div class="navigationHint">
-        <p><img src="images/EscapeNavigationHint.png"/></p>
-        <p>Use escape to close current item or return home (if no item is selected).</p>
-    </div>
-    <div class="accordion">
+	<header class="navigationBar" role="banner">
+		<nav class="quickNav" aria-label="Quick navigation">
+			<a href="games.html" aria-current="page">games</a>
+			<a href="computer_graphics.html">computer graphics</a>
+			<a href="computer_architecture.html">computer architecture</a>
+			<a href="others.html">others</a>
+			<a href="about.html">about</a>
+		</nav>
+	</header>
+	<main>
+		<div class="navigationHint" aria-live="polite">
+			<p><img src="images/ArrowsNavigationHint.png" alt="Arrows navigation hint"/></p>
+			<p>Use arrows keys to navigate through items...</p>
+		</div>
+		<div class="navigationHint" aria-live="polite">
+			<p><img src="images/WASDKeysNavigationHint.png" alt="WASD keys hint"/></p>
+			<p>...WASD keys will work too.</p>
+		</div>
+		<div class="navigationHint" aria-live="polite">
+			<p><img src="images/ReturnNavigationHint.png" alt="Return key hint"/></p>
+			<p>Use RETURN to open/close current selected item.</p>
+		</div>
+		<div class="navigationHint" aria-live="polite">
+			<p><img src="images/EscapeNavigationHint.png" alt="Escape key hint"/></p>
+			<p>Use escape to close current item or return home (if no item is selected).</p>
+		</div>
+		<div class="accordion">
 	<!-- PROCEDURAL CITY -->
 	<h3>Procedural City [Demo]</h3>
 	<div>
@@ -211,7 +219,8 @@
 		<p>Visit <a href="https://www.assembla.com/code/a16bitrpg/subversion/nodes" target="_blank">project website</a></p>
 	</div> -->
 	<!-- A16BITRPG -->
-    </div>
-	<div class="footer" />
+		</div>
+	</main>
+	<footer class="footer" role="contentinfo"></footer>
 </body>
 </html>

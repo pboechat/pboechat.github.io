@@ -1,39 +1,54 @@
-/* ************************
-   *     HTML ELEMENTS
-   ************************/
+/* ***********************************
+ *     HTML ELEMENTS (legacy base)
+ * ***********************************/
+html,
+body {
+	max-width: 100%;
+	overflow-x: hidden;
+	/* prevent stray horizontal scrollbars */
+}
 
-.standardPage
-{
+.standardPage {
+	/* Typography updated to a terminal-style monospace stack with Tahoma fallback */
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", Tahoma, monospace;
+	color: #c2c2c2;
+	width: 100%;
+	min-height: 100vh;
+	/* Modern background while keeping legacy gradient fallback below */
+	background-color: #0a0c10;
+	background-image:
+		/* vignette */
+		radial-gradient(100% 150% at 50% 0%, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0) 60%),
+		/* subtle diagonal gradient */
+		linear-gradient(135deg, #0a0c10 0%, #15181d 100%);
+	/* Legacy fallbacks */
+	background: #0a0c10;
+	background: -moz-linear-gradient(-45deg, #0a0c10 0%, #15181d 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #0a0c10), color-stop(100%, #15181d));
+	background: -webkit-linear-gradient(-45deg, #0a0c10 0%, #15181d 100%);
+	background: -o-linear-gradient(-45deg, #0a0c10 0%, #15181d 100%);
+	background: -ms-linear-gradient(-45deg, #0a0c10 0%, #15181d 100%);
+	background: linear-gradient(135deg, #0a0c10 0%, #15181d 100%);
+	overscroll-behavior: none;
+	/* prevent scroll chaining on touchpads */
+	overflow-x: hidden;
+	/* ensure no horizontal scroll from overlays */
+}
+
+.errorPage {
 	font-family: Tahoma, sans-serif;
 	color: #c2c2c2;
-	width:100%;
-	height:100%;
-	background: #000000;
-	background: -moz-linear-gradient(-45deg,  #000000 0%, #45484d 100%);
-	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#000000), color-stop(100%,#45484d));
-	background: -webkit-linear-gradient(-45deg,  #000000 0%,#45484d 100%);
-	background: -o-linear-gradient(-45deg,  #000000 0%,#45484d 100%);
-	background: -ms-linear-gradient(-45deg,  #000000 0%,#45484d 100%);
-	background: linear-gradient(135deg,  #000000 0%,#45484d 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#45484d',GradientType=1 );
-}
-
-.errorPage
-{
-	font-family: Tahoma, sans-serif;
-	color: #c2c2c2;
-	width:100%;
-	height:100%;
+	width: 100%;
+	min-height: 100vh;
 	background: #000000;
 }
 
-a:link, a:visited
-{
+a:link,
+a:visited {
 	color: #c2c2c2;
 }
 
-a:hover
-{
+a:hover {
 	color: #e0e0e0;
 }
 
@@ -41,174 +56,358 @@ a:hover
    *     STRUCTURAL ELEMENTS
    *******************************/
 
-.errorMessage
-{
+.errorMessage {
 	color: #ff0000;
-	display:block;
-	position:absolute;
+	display: block;
+	position: absolute;
 	top: 40%;
 	left: 40%;
 	line-height: 1em;
-	font-weight:bold;
+	font-weight: bold;
 	font-size: 60px;
-	text-shadow: 0px 0px 0 rgb(170,0,0),1px 1px 0 rgb(146,0,0),2px 2px 0 rgb(121,0,0),3px 3px 0 rgb(97,0,0),4px 4px 0 rgb(73,0,0), 5px 5px 0 rgb(49,0,0),6px 6px 5px rgba(0,0,0,0.75),6px 6px 1px rgba(0,0,0,0.5),0px 0px 5px rgba(0,0,0,.2);
-}
-   
-.navigationBar
-{
-	position:absolute;
-	top: 22px;
-	left: 22px;
-	line-height: 1em;
-	font-weight:bold;
-	font-size: 22px;
-	text-shadow: 0px 0px 0 rgb(170,170,170),1px 1px 0 rgb(146,146,146),2px 2px 0 rgb(121,121,121),3px 3px 0 rgb(97,97,97),4px 4px 0 rgb(73,73,73), 5px 5px 0 rgb(49,49,49),6px 6px 5px rgba(0,0,0,0.75),6px 6px 1px rgba(0,0,0,0.5),0px 0px 5px rgba(0,0,0,.2);
+	text-shadow: 0px 0px 0 rgb(170, 0, 0), 1px 1px 0 rgb(146, 0, 0), 2px 2px 0 rgb(121, 0, 0), 3px 3px 0 rgb(97, 0, 0), 4px 4px 0 rgb(73, 0, 0), 5px 5px 0 rgb(49, 0, 0), 6px 6px 5px rgba(0, 0, 0, 0.75), 6px 6px 1px rgba(0, 0, 0, 0.5), 0px 0px 5px rgba(0, 0, 0, .2);
 }
 
-.navigationBar a:link, a:visited
-{
+.navigationBar {
+	position: sticky;
+	top: 0;
+	left: 0;
+	padding: 12px 16px;
+	line-height: 1.2em;
+	font-weight: 600;
+	font-size: clamp(16px, 2.2vw, 20px);
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+	backdrop-filter: blur(2px);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 8px 12px;
+}
+
+.navigationBar a:link,
+.navigationBar a:visited {
 	color: #c2c2c2;
 	text-decoration: none;
 }
 
-.navigationBar a:hover
-{
+.navigationBar a:hover {
 	color: #e0e0e0;
 }
 
-.navigationHint
-{
-	display:block;
-	position:absolute;
-	top: 5%;
-	left: 85%;
-	width: 200px;
-	height: 50px;
-	font-size: 10px;
+/* header: breadcrumb + quick nav */
+.breadcrumb {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	color: var(--muted);
+	font-weight: 600;
+}
+
+.breadcrumb a {
+	color: #c2c2c2;
+	text-decoration: none;
+}
+
+.breadcrumb a:hover {
+	color: #e0e0e0;
+}
+
+.breadcrumb .current {
+	color: #e0e0e0;
+}
+
+.quickNav {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+
+.quickNav a {
+	color: #c2c2c2;
+	text-decoration: none;
+	padding: 4px 6px;
+	border-radius: 4px;
+	display: inline-flex;
+	/* keep arrow inline with text */
+	align-items: center;
+	gap: 0.5ch;
+}
+
+.quickNav a:hover {
+	color: #e0e0e0;
+	background: rgba(255, 255, 255, 0.05);
+}
+
+/* Top menu: make selection effect match central menu */
+.quickNav a[aria-current="page"] {
+	color: #e6f2ff;
+	text-shadow: 0 0 6px rgba(102, 179, 255, 0.35), 0 0 14px rgba(102, 179, 255, 0.22);
+	box-shadow: none;
+	/* remove blue underline */
+	transform: translateX(0.25ch);
+	/* subtle nudge */
+}
+
+.quickNav a::after {
+	/* reserve arrow space */
+	content: "";
+	visibility: hidden;
+	width: 1ch;
+	text-align: left;
+}
+
+.quickNav a[aria-current="page"]::after {
+	content: "<";
+	visibility: visible;
+}
+
+/* Dim non-selected top menu items to mirror central menu behavior */
+.quickNav a:not([aria-current="page"]) {
+	opacity: 0.33;
+}
+
+.quickNav a:not([aria-current="page"]):hover {
+	opacity: 1;
+}
+
+@media (max-width: 640px) {
+	.navigationBar {
+		padding: 10px 12px;
+	}
+}
+
+.navigationHint {
+	display: block;
+	position: fixed;
+	bottom: 18px;
+	right: 18px;
+	width: 240px;
+	min-height: 50px;
+	font-size: 12px;
 	text-align: center;
 	opacity: 0;
-	filter: alpha(opacity=0); /* For IE8 and earlier */
+	background: rgba(0, 0, 0, 0.35);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	padding: 8px 10px;
+	border-radius: 6px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.about
-{
-	display:block;
-	position:absolute;
-	top: 20%;
-	left: 33%;
-	line-height: 1.5em;
-	font-weight:bold;
-	font-size: 22px;
-	text-shadow: 0px 0px 0 rgb(170,170,170),1px 1px 0 rgb(146,146,146),2px 2px 0 rgb(121,121,121),3px 3px 0 rgb(97,97,97),4px 4px 0 rgb(73,73,73), 5px 5px 0 rgb(49,49,49),6px 6px 5px rgba(0,0,0,0.75),6px 6px 1px rgba(0,0,0,0.5),0px 0px 5px rgba(0,0,0,.2);
+.about {
+	display: block;
+	position: relative;
+	margin: 12vh auto 10vh;
+	max-width: 900px;
+	line-height: 1.6em;
+	font-weight: 600;
+	font-size: clamp(18px, 2.4vw, 22px);
+	text-shadow: 0 0 10px rgba(102, 179, 255, 0.10);
 }
 
-.menu
-{
-	display:block;
-	position:absolute;
-	top: 20%;
-	left: 33%;
-	height: 75%;
-	line-height: 1em;
-	font-weight:bold;
-	font-size: 60px;
-	text-shadow: 0px 0px 0 rgb(170,170,170),1px 1px 0 rgb(146,146,146),2px 2px 0 rgb(121,121,121),3px 3px 0 rgb(97,97,97),4px 4px 0 rgb(73,73,73), 5px 5px 0 rgb(49,49,49),6px 6px 5px rgba(0,0,0,0.75),6px 6px 1px rgba(0,0,0,0.5),0px 0px 5px rgba(0,0,0,.2);
+.menu {
+	display: block;
+	position: relative;
+	margin: 10vh auto 12vh;
+	max-width: 900px;
+	line-height: 1.1em;
+	font-weight: 800;
+	font-size: clamp(22px, 4.8vw, 44px);
+	text-shadow: 0 0 8px rgba(102, 179, 255, 0.08);
 	opacity: 0;
-	filter: alpha(opacity=0); /* For IE8 and earlier */
 }
 
-.menu a:link, a:visited
-{
+/* columnized menu removed */
+
+.menu a:link,
+.menu a:visited {
 	color: #c2c2c2;
 	text-decoration: none;
+	display: flex;
+	/* consistent layout; keep arrow on same line */
+	align-items: center;
+	justify-content: flex-start;
+	/* arrow sits right after text */
+	gap: 0.5ch;
+	padding: 6px 0;
+	overflow-wrap: anywhere;
+	/* allow long words to break */
 }
 
-.menu a:hover
-{
+.menu a:hover {
 	color: #e0e0e0;
 }
 
-.footer
-{
-	display:block;
-	position:absolute;
-	top: 95%;
-	left: 80%;
+.menu a.is-active {
+	color: #e6f2ff;
+	text-shadow: 0 0 6px rgba(102, 179, 255, 0.35), 0 0 14px rgba(102, 179, 255, 0.22);
+	transform: translateX(0.25ch);
+	/* subtle nudge to the right */
+}
+
+.menu a.is-active::before {
+	content: "";
+}
+
+/* Reserve arrow space on all menu items; reveal on active */
+.menu a::after {
+	content: "";
+	visibility: hidden;
+	flex: 0 0 auto;
+	width: 1ch;
+	text-align: left;
+}
+
+.menu a.is-active::after {
+	content: "<";
+	visibility: visible;
+}
+
+.menu a.is-dimmed {
+	opacity: 0.33;
+}
+
+/* Match selection/dim styles for accordion headers */
+.accordion h3.is-selected,
+.ui-accordion-header.is-selected {
+	color: #e6f2ff;
+	text-shadow: 0 0 6px rgba(102, 179, 255, 0.35), 0 0 14px rgba(102, 179, 255, 0.22);
+	transform: translateX(0.25ch);
+	/* match homepage nudge */
+}
+
+.accordion h3.is-dimmed,
+.ui-accordion-header.is-dimmed {
+	opacity: 0.33;
+}
+
+.footer {
+	display: block;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
 	width: 20%;
-	height: 5%;
-	text-align: center;	
+	height: auto;
+	text-align: center;
 }
 
 /* **********************
    *     ACCORDION
    **********************/
 
-.accordion
-{
-	display:block;
-	position:absolute;
-	top: 20%;
-	left: 33%;
-	height: 75%;
-	line-height: 1.5em;
+.accordion {
+	display: block;
+	position: relative;
+	margin: 6vh auto 10vh;
+	max-width: 980px;
+	width: calc(100% - 44px);
+	line-height: 1.3em;
+	/* tighter to match homepage menu feel */
 	opacity: 0;
-	filter: alpha(opacity=0); /* For IE8 and earlier */
 }
 
-.ui-state-focus 
-{ 
-	outline: none; 
-}
-
-.ui-accordion-header 
-{
+.ui-state-focus {
 	outline: none;
-	font-weight:bold;
-	font-size: 60px;
-	text-shadow: 0px 0px 0 rgb(170,170,170),1px 1px 0 rgb(146,146,146),2px 2px 0 rgb(121,121,121),3px 3px 0 rgb(97,97,97),4px 4px 0 rgb(73,73,73), 5px 5px 0 rgb(49,49,49),6px 6px 5px rgba(0,0,0,0.75),6px 6px 1px rgba(0,0,0,0.5),0px 0px 5px rgba(0,0,0,.2);
-    cursor: pointer;
-	cursor: hand;
 }
 
-.ui-accordion-content
-{
-	display:block;
-	width: 420px;
-	border: 2px solid #9B9B9B;
-	padding: 22px;
-	background: -moz-linear-gradient(45deg, rgba(124,124,124,0.5) 0%, rgba(124,124,124,0.5) 1%, rgba(0,0,0,0) 100%);
-	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(124,124,124,0.5)), color-stop(1%,rgba(124,124,124,0.5)), color-stop(100%, rgba(0,0,0,0)));
-	background: -webkit-linear-gradient(45deg, rgba(124,124,124,0.5) 0%,rgba(124,124,124,0.5) 1%, rgba(0,0,0,0) 100%);
-	background: -o-linear-gradient(45deg, rgba(124,124,124,0.5) 0%, rgba(124,124,124,0.5) 1%, rgba(0,0,0,0) 100%);
-	background: -ms-linear-gradient(45deg, rgba(124,124,124,0.5) 0%, rgba(124,124,124,0.5) 1%, rgba(0,0,0,0) 100%);
-	background: linear-gradient(45deg, rgba(124,124,124,0.5) 0%, rgba(124,124,124,0.5) 1%, rgba(0,0,0,0) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#807c7c7c', endColorstr='#00000000',GradientType=1);
+.ui-accordion-header {
+	outline: none;
+	font-weight: 800;
+	font-size: clamp(22px, 4.8vw, 44px);
+	text-shadow: 0 0 8px rgba(102, 179, 255, 0.08);
+	cursor: pointer;
+	cursor: hand;
+	line-height: 1.1em;
+	/* match homepage menu */
+	padding: 6px 0;
+	/* match homepage menu */
+	display: flex;
+	/* keep arrow on same line */
+	align-items: center;
+	justify-content: flex-start;
+	gap: 0.5ch;
+	overflow-wrap: anywhere;
 }
+
+/* Non-jQuery UI variant: make accordion headers match homepage menu size */
+.accordion h3 {
+	outline: none;
+	font-weight: 800;
+	font-size: clamp(22px, 4.8vw, 44px);
+	text-shadow: 0 0 8px rgba(102, 179, 255, 0.08);
+	cursor: pointer;
+	margin: 0;
+	padding: 6px 0;
+	/* same vertical rhythm as homepage menu */
+	line-height: 1.1em;
+	/* same as homepage menu */
+	display: flex;
+	/* keep arrow on same line */
+	align-items: center;
+	justify-content: flex-start;
+	gap: 0.5ch;
+	overflow-wrap: anywhere;
+}
+
+.ui-accordion-header.is-selected {
+	color: #e6f2ff;
+	text-shadow: 0 0 6px rgba(102, 179, 255, 0.35), 0 0 14px rgba(102, 179, 255, 0.22);
+}
+
+/* Reserve arrow space for jQuery UI headers */
+.ui-accordion-header::after {
+	content: "";
+	visibility: hidden;
+	flex: 0 0 auto;
+	width: 1ch;
+	text-align: left;
+}
+
+.ui-accordion-header.is-selected::after {
+	content: "<";
+	visibility: visible;
+}
+
+.ui-accordion-header.is-dimmed {
+	opacity: 0.33;
+}
+
+.ui-accordion-content {
+	display: block;
+	width: auto;
+	max-width: 980px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	padding: 18px 22px;
+	background: linear-gradient(45deg, rgba(124, 124, 124, 0.15) 0%, rgba(0, 0, 0, 0) 100%);
+	border-radius: 8px;
+}
+
+/* columnized accordion removed */
 
 /* ********************
    *     NIVO ZOOM
    ********************/
 
-a.nivoZoom 
-{
+a.nivoZoom {
 	border: 0 !important;
 }
 
-a.nivoZoom img 
-{
+a.nivoZoom img {
 	-moz-box-shadow: 0px 0px 5px #000;
 	-webkit-box-shadow: 0px 0px 5px #000;
 	box-shadow: 0px 0px 5px #000;
 }
-a.nivoZoom img .nivoLarge 
-{
+
+a.nivoZoom img .nivoLarge {
 	-moz-box-shadow: 0px 0px 10px #000;
 	-webkit-box-shadow: 0px 0px 10px #000;
 	box-shadow: 0px 0px 10px #000;
 }
 
-.nivoCaption 
-{
+.nivoCaption {
 	display: none;
 	position: absolute;
 	z-index: 110;
@@ -219,20 +418,18 @@ a.nivoZoom img .nivoLarge
 	overflow: hidden;
 }
 
-.nivoZoomHover 
-{
-	position:absolute;
-	top:0px;
-	left:0px;
-	z-index:9;
-	width:100%;
-	height:100%;
-	cursor:pointer;
+.nivoZoomHover {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 9;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
 	background: url("../images/Zoom.png") no-repeat 50% 50%;
 }
 
-.nivoZoomHover .loading 
-{
+.nivoZoomHover .loading {
 	background: url("../images/Loading.gif") no-repeat 50% 50%;
 	border: 4px solid #000;
 	width: 16px;
@@ -243,22 +440,271 @@ a.nivoZoom img .nivoLarge
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	border-radius: 4px;
+	margin: 6vh auto 10vh;
 }
 
 /* source: https://stackoverflow.com/questions/248011/how-do-i-wrap-text-in-a-pre-tag */
-pre 
-{
-    background-color: white;
-    white-space: pre-wrap;       /* Since CSS 2.1 */
-    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-    white-space: -pre-wrap;      /* Opera 4-6 */
-    white-space: -o-pre-wrap;    /* Opera 7 */
-    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+pre {
+	background-color: white;
+	white-space: pre-wrap;
+	/* Since CSS 2.1 */
+	white-space: -moz-pre-wrap;
+	/* Mozilla, since 1999 */
+	white-space: -o-pre-wrap;
+	/* Opera 7 */
+	word-wrap: break-word;
+	/* Internet Explorer 5.5+ */
 }
 
 /* source: https://github.com/google/code-prettify#how-can-i-put-line-numbers-on-every-line-instead-of-just-every-fifth-line */
-li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8 
-{
-  list-style-type: decimal !important;
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L5,
+li.L6,
+li.L7,
+li.L8 {
+	list-style-type: decimal !important;
 }
 
+/* ************************
+	 *     MODERN ENHANCEMENTS
+	 *************************/
+
+:root {
+	--bg: #0a0c10;
+	--panel: #12161c;
+	--fg: #cfd8dc;
+	--muted: #9aa7ad;
+	--accent: #66b3ff;
+	/* soft blue for focus outlines */
+}
+
+/* CRT scanlines + subtle glow */
+.standardPage::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	background-image: repeating-linear-gradient(to bottom,
+			rgba(255, 255, 255, 0.03) 0px,
+			rgba(255, 255, 255, 0.03) 1px,
+			rgba(0, 0, 0, 0) 2px,
+			rgba(0, 0, 0, 0) 3px);
+	mix-blend-mode: overlay;
+	opacity: 0.15;
+}
+
+@keyframes blink {
+
+	0%,
+	49% {
+		opacity: 1
+	}
+
+	50%,
+	100% {
+		opacity: 0
+	}
+}
+
+/* Better focus visibility */
+a:focus-visible,
+.ui-accordion-header:focus-visible {
+	outline: 2px dashed var(--accent);
+	outline-offset: 2px;
+}
+
+/* Images tasteful shadow */
+img {
+	box-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+	max-width: 100%;
+	height: auto;
+}
+
+iframe,
+video {
+	max-width: 100%;
+}
+
+/* Code blocks inside dark UI */
+.ui-accordion-content pre {
+	background: #0b0e13;
+	color: #d6dee2;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 6px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+	.navigationHint {
+		width: calc(100vw - 32px);
+		right: 16px;
+		left: 16px;
+	}
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0ms !important;
+		animation-iteration-count: 1 !important;
+		transition: none !important;
+	}
+}
+
+/* ***********************
+	 *  THEMED SCROLLBARS
+	 ***********************/
+
+/* Firefox */
+:root {
+	/* Dark gray scrollbar to blend with the overall theme */
+	scrollbar-color: #3a3f46 var(--bg);
+	/* thumb, track */
+	scrollbar-width: thin;
+}
+
+/* WebKit/Blink */
+.standardPage::-webkit-scrollbar {
+	width: 12px;
+	/* vertical */
+	height: 10px;
+	/* horizontal (kept small; mostly hidden) */
+}
+
+.standardPage::-webkit-scrollbar-track {
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+	border-left: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.standardPage::-webkit-scrollbar-thumb {
+	background: linear-gradient(180deg, rgba(72, 78, 88, 0.9), rgba(58, 63, 70, 0.8));
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 8px;
+	box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.standardPage::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(180deg, rgba(92, 98, 108, 0.95), rgba(72, 78, 88, 0.9));
+}
+
+.standardPage::-webkit-scrollbar-corner {
+	background: transparent;
+}
+
+
+/* ==========================
+   Floating detail panel UI
+   ========================== */
+
+/* Hide inline accordion content when JS is enabled (we'll show it in the panel) */
+body.js-enabled .accordion>div {
+	display: none;
+}
+
+/* Arrow indicator uses reserved space; show only when selected */
+.accordion h3::after {
+	content: "";
+	visibility: hidden;
+	flex: 0 0 auto;
+	width: 1ch;
+	text-align: left;
+}
+
+.accordion h3.is-selected::after {
+	content: "<";
+	visibility: visible;
+}
+
+.detailOverlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 150ms ease;
+	z-index: 1000;
+}
+
+.detailOverlay.is-open {
+	opacity: 1;
+	visibility: visible;
+}
+
+.detailPanel {
+	position: fixed;
+	background: var(--panel);
+	color: var(--fg);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+	z-index: 1001;
+}
+
+/* Right-side drawer (default on wide screens) */
+.detailPanel.detail-side {
+	top: 0;
+	right: 0;
+	height: 100vh;
+	width: min(640px, 90vw);
+	transform: translateX(100%);
+	transition: transform 200ms ease;
+}
+
+.detailPanel.detail-side.is-open {
+	transform: translateX(0);
+}
+
+/* Centered modal variant */
+.detailPanel.detail-center {
+	max-width: min(980px, 92vw);
+	max-height: 86vh;
+	width: auto;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%) scale(0.98);
+	transition: transform 160ms ease;
+	border-radius: 10px;
+}
+
+.detailPanel.detail-center.is-open {
+	transform: translate(-50%, -50%) scale(1);
+}
+
+.detailPanel .detailHeader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 10px 12px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.detailPanel .detailTitle {
+	font-weight: 800;
+	color: #e6f2ff;
+}
+
+.detailPanel .detailClose {
+	appearance: none;
+	background: transparent;
+	border: 0;
+	color: #c2c2c2;
+	font-size: 20px;
+	line-height: 1;
+	padding: 6px 8px;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.detailPanel .detailClose:hover {
+	color: #e0e0e0;
+	background: rgba(255, 255, 255, 0.06);
+}
+
+.detailPanel .detailBody {
+	padding: 14px 16px 18px;
+	overflow: auto;
+	max-height: calc(100% - 52px);
+}
