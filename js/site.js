@@ -677,40 +677,73 @@ $(function () {
 /* (1) THEME TOGGLE SCRIPT ============================== */
 (function () {
 	const root = document.documentElement;
-	const KEY = 'theme'; // 'light' | 'dark'
+	const KEY = 'theme'; // 'light' | 'dark' (user override) or null (follow system)
 
-	// Apply stored preference or fall back to system
-	const stored = localStorage.getItem(KEY);
-	if (stored === 'light' || stored === 'dark') {
-		root.dataset.theme = stored;
-	} else {
-		root.dataset.theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+	function currentSystemPrefersDark() {
+		return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 	}
 
-	// Keep in sync with system (unless user picked a theme)
-	const mq = window.matchMedia('(prefers-color-scheme: dark)');
-	mq.addEventListener('change', (e) => {
-		if (!localStorage.getItem(KEY)) {
-			root.dataset.theme = e.matches ? 'dark' : 'light';
-			updateButton();
-		}
-	});
+	function applyThemeFromPrefs() {
+		const stored = localStorage.getItem(KEY);
+		const theme = (stored === 'light' || stored === 'dark')
+			? stored
+			: 'dark'; // default to DARK when no preference is saved
+		root.dataset.theme = theme;
+		updateButton();
+	}
 
-	// Toggle button
-	const btn = document.getElementById('themeToggle');
+	// Insert the toggle if missing
+	function ensureToggle() {
+		let btn = document.getElementById('themeToggle');
+		if (!btn) {
+			const header = document.querySelector('.navigationBar');
+			if (header) {
+				btn = document.createElement('button');
+				btn.id = 'themeToggle';
+				btn.className = 'themeToggle';
+				btn.type = 'button';
+				btn.title = 'Toggle color theme';
+				btn.setAttribute('aria-pressed', 'false');
+				btn.textContent = '🌙';
+				header.appendChild(btn);
+			}
+		}
+		return btn || null;
+	}
+
 	function updateButton() {
+		const btn = document.getElementById('themeToggle');
+		if (!btn) return;
 		const isDark = root.dataset.theme === 'dark';
 		btn.setAttribute('aria-pressed', String(isDark));
 		btn.textContent = isDark ? '☀️' : '🌙';
 		btn.title = isDark ? 'Switch to light theme' : 'Switch to dark theme';
 	}
-	if (btn) {
-		updateButton();
+
+	function bindToggle(btn) {
+		if (!btn) return;
 		btn.addEventListener('click', () => {
-			root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-			localStorage.setItem(KEY, root.dataset.theme);
+			const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+			root.dataset.theme = next;
+			localStorage.setItem(KEY, next);
 			updateButton();
 		});
 	}
+
+	// Keep in sync with system when user has no explicit choice
+	const mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+	if (mq && mq.addEventListener) {
+		mq.addEventListener('change', () => {
+			// If the user hasn't explicitly picked, keep our default (dark),
+			// do not auto-flip with the system.
+		});
+	}
+
+	// Init
+	document.addEventListener('DOMContentLoaded', () => {
+		const btn = ensureToggle();
+		bindToggle(btn);
+		applyThemeFromPrefs();
+	});
 })();
 /* ==================================================== */

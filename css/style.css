@@ -11,24 +11,16 @@ body {
 .standardPage {
 	/* Typography updated to a terminal-style monospace stack with Tahoma fallback */
 	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", Tahoma, monospace;
-	color: #c2c2c2;
+	color: var(--fg);
 	width: 100%;
 	min-height: 100vh;
-	/* Modern background while keeping legacy gradient fallback below */
-	background-color: #0a0c10;
+	/* Themed background */
+	background-color: var(--bg);
 	background-image:
 		/* vignette */
 		radial-gradient(100% 150% at 50% 0%, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0) 60%),
 		/* subtle diagonal gradient */
-		linear-gradient(135deg, #0a0c10 0%, #15181d 100%);
-	/* Legacy fallbacks */
-	background: #0a0c10;
-	background: -moz-linear-gradient(-45deg, #0a0c10 0%, #15181d 100%);
-	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #0a0c10), color-stop(100%, #15181d));
-	background: -webkit-linear-gradient(-45deg, #0a0c10 0%, #15181d 100%);
-	background: -o-linear-gradient(-45deg, #0a0c10 0%, #15181d 100%);
-	background: -ms-linear-gradient(-45deg, #0a0c10 0%, #15181d 100%);
-	background: linear-gradient(135deg, #0a0c10 0%, #15181d 100%);
+		linear-gradient(135deg, var(--bg) 0%, var(--surface) 100%);
 	overscroll-behavior: none;
 	/* prevent scroll chaining on touchpads */
 	overflow-x: hidden;
@@ -45,11 +37,15 @@ body {
 
 a:link,
 a:visited {
-	color: #c2c2c2;
+	color: var(--fg);
 }
 
-a:hover {
+:root[data-theme="dark"] a:hover {
 	color: #e0e0e0;
+}
+
+:root[data-theme="light"] a:hover {
+	color: var(--accent);
 }
 
 /* *******************************
@@ -89,12 +85,12 @@ a:hover {
 
 .navigationBar a:link,
 .navigationBar a:visited {
-	color: #c2c2c2;
+	color: var(--fg);
 	text-decoration: none;
 }
 
 .navigationBar a:hover {
-	color: #e0e0e0;
+	color: var(--accent);
 }
 
 /* header: breadcrumb + quick nav */
@@ -107,16 +103,16 @@ a:hover {
 }
 
 .breadcrumb a {
-	color: #c2c2c2;
+	color: var(--fg);
 	text-decoration: none;
 }
 
 .breadcrumb a:hover {
-	color: #e0e0e0;
+	color: var(--accent);
 }
 
 .breadcrumb .current {
-	color: #e0e0e0;
+	color: var(--accent);
 }
 
 .quickNav {
@@ -127,7 +123,7 @@ a:hover {
 }
 
 .quickNav a {
-	color: #c2c2c2;
+	color: var(--fg);
 	text-decoration: none;
 	padding: 4px 6px;
 	border-radius: 4px;
@@ -138,18 +134,57 @@ a:hover {
 }
 
 .quickNav a:hover {
-	color: #e0e0e0;
 	background: rgba(255, 255, 255, 0.05);
+}
+
+:root[data-theme="dark"] .quickNav a:hover {
+	color: #e0e0e0;
+}
+
+:root[data-theme="light"] .quickNav a:hover {
+	color: var(--accent);
 }
 
 /* Top menu: make selection effect match central menu */
 .quickNav a[aria-current="page"] {
-	color: #e6f2ff;
+	color: var(--accent);
 	text-shadow: 0 0 6px rgba(102, 179, 255, 0.35), 0 0 14px rgba(102, 179, 255, 0.22);
 	box-shadow: none;
 	/* remove blue underline */
 	transform: translateX(0.25ch);
 	/* subtle nudge */
+}
+
+/* Dark theme: revert top menu selection to neutral (no blue/glow) */
+:root[data-theme="dark"] .quickNav a[aria-current="page"] {
+	color: var(--fg);
+	text-shadow: none;
+}
+
+/* Light theme: add a subtle dark aura for selection */
+:root[data-theme="light"] .quickNav a[aria-current="page"],
+:root[data-theme="light"] .menu a.is-active,
+:root[data-theme="light"] .accordion h3.is-selected,
+:root[data-theme="light"] .ui-accordion-header.is-selected {
+	text-shadow: 0 0 6px rgba(0, 0, 0, 0.28), 0 0 14px rgba(0, 0, 0, 0.18);
+}
+
+/* Light theme: keep base headings clean, but allow hover aura */
+:root[data-theme="light"] .menu,
+:root[data-theme="light"] .ui-accordion-header,
+:root[data-theme="light"] .accordion h3,
+:root[data-theme="light"] .about {
+	text-shadow: none;
+}
+
+/* Light theme hover: very subtle dark aura */
+:root[data-theme="light"] .quickNav a:hover,
+:root[data-theme="light"] .navigationBar a:hover,
+:root[data-theme="light"] .menu a:hover,
+:root[data-theme="light"] .breadcrumb a:hover,
+:root[data-theme="light"] .ui-accordion-header:hover,
+:root[data-theme="light"] .accordion h3:hover {
+	text-shadow: 0 0 8px rgba(0, 0, 0, 0.18);
 }
 
 .quickNav a::after {
@@ -224,7 +259,7 @@ a:hover {
 
 .menu a:link,
 .menu a:visited {
-	color: #c2c2c2;
+	color: var(--fg);
 	text-decoration: none;
 	display: flex;
 	/* consistent layout; keep arrow on same line */
@@ -238,14 +273,18 @@ a:hover {
 }
 
 .menu a:hover {
-	color: #e0e0e0;
+	color: var(--accent);
 }
 
 .menu a.is-active {
-	color: #e6f2ff;
+	color: var(--accent);
 	text-shadow: 0 0 6px rgba(102, 179, 255, 0.35), 0 0 14px rgba(102, 179, 255, 0.22);
 	transform: translateX(0.25ch);
 	/* subtle nudge to the right */
+}
+
+:root[data-theme="dark"] .menu a.is-active {
+	color: #e6f2ff;
 }
 
 .menu a.is-active::before {
@@ -273,10 +312,15 @@ a:hover {
 /* Match selection/dim styles for accordion headers */
 .accordion h3.is-selected,
 .ui-accordion-header.is-selected {
-	color: #e6f2ff;
+	color: var(--accent);
 	text-shadow: 0 0 6px rgba(102, 179, 255, 0.35), 0 0 14px rgba(102, 179, 255, 0.22);
 	transform: translateX(0.25ch);
 	/* match homepage nudge */
+}
+
+:root[data-theme="dark"] .accordion h3.is-selected,
+:root[data-theme="dark"] .ui-accordion-header.is-selected {
+	color: #e6f2ff;
 }
 
 .accordion h3.is-dimmed,
@@ -472,36 +516,33 @@ li.L8 {
 	 *     MODERN ENHANCEMENTS
 	 *************************/
 
-/* Theme tokens */
-:root[data-theme="light"],
+/* Theme tokens (dark is default) */
 :root {
-	--bg: #ffffff;
-	--fg: #0b0f18;
-	--muted: #4b5563;
-	--accent: #0969da;
-	--surface: #f6f8fa;
-	--border: #d0d7de;
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--bg: #0d1117;
-		--fg: #c9d1d9;
-		--muted: #8b949e;
-		--accent: #58a6ff;
-		--surface: #161b22;
-		--border: #30363d;
-	}
-}
-
-/* Explicit override (user toggle) */
-:root[data-theme="dark"] {
 	--bg: #0d1117;
 	--fg: #c9d1d9;
 	--muted: #8b949e;
-	--accent: #58a6ff;
+	--accent: #d0d7de;
+	/* neutral light gray accent for focus/lines */
 	--surface: #161b22;
 	--border: #30363d;
+	--panel: rgba(13, 17, 23, 0.92);
+}
+
+/* Light theme (opt-in) - warmer, dimmer gray palette (no blue) */
+:root[data-theme="light"] {
+	--bg: #ece7e1;
+	/* a bit darker than before */
+	--fg: #1f2328;
+	/* dark readable text */
+	--muted: #5b5b5b;
+	/* neutral warm gray */
+	--accent: #2f2f2f;
+	/* dark gray accent (no blue) */
+	--surface: #f6f3ee;
+	/* card surface, slightly off-white */
+	--border: #cfc7bc;
+	/* warm border */
+	--panel: rgba(255, 255, 255, 0.92);
 }
 
 /* Let the browser style form controls appropriately */
@@ -702,7 +743,7 @@ body.js-enabled .accordion>div {
 	position: fixed;
 	background: var(--panel);
 	color: var(--fg);
-	border: 1px solid rgba(255, 255, 255, 0.08);
+	border: 1px solid var(--border);
 	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 	z-index: 1001;
 }
@@ -748,6 +789,11 @@ body.js-enabled .accordion>div {
 
 .detailPanel .detailTitle {
 	font-weight: 800;
+	color: var(--fg);
+}
+
+/* Dark theme: keep the subtle soft-blue title */
+:root[data-theme="dark"] .detailPanel .detailTitle {
 	color: #e6f2ff;
 }
 
